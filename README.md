@@ -1,1 +1,11 @@
-### :point_right: This starter repo has moved to the [ionic-team/starters](https://github.com/ionic-team/starters/tree/master/ionic-angular/official/blank) repo! :point_left:
+
+# D3.js typescript examples with Ionic 3
+
+## D3.js
+Bring data to life with SVG, Canvas and HTML
+[https://github.com/d3/d3](https://github.com/d3/d3)
+
+
+## Ionic Framework
+Build amazing native and progressive web apps with open web technologies. One app running on everything
+[https://github.com/ionic-team/ionic](https://github.com/ionic-team/ionic)
