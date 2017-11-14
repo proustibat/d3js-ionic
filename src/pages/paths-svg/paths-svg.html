@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle icon-only>
+            <ion-icon name='menu'></ion-icon>
+        </button>
+        <ion-title>
+            SVG Paths
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+    <h1>SVG Paths</h1>
+
+    <ion-item>
+
+        <ion-label>Interpolation</ion-label>
+
+        <ion-select [(ngModel)]="interpolationSelected" (ionChange)="createSvgPathsLines($event)" interface="action-sheet">
+            <ion-option *ngFor="let interpolation of interpolationsSelectList">{{interpolation}}</ion-option>
+        </ion-select>
+    </ion-item>
+
+    <div id="paths"></div>
+
+</ion-content>

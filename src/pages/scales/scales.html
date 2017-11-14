@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle icon-only>
+            <ion-icon name='menu'></ion-icon>
+        </button>
+        <ion-title>
+            D3.js Scales
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+    <h1>Scales</h1>
+
+    <div id="scaleSvg">
+
+        <h2>Initial Data</h2>
+        <p *ngIf="initialDataToScale">{{initialDataToScale.join(' | ')}}</p>
+
+        <h2>Scaled Data</h2>
+        <p *ngIf="scaledData">{{scaledData.join(' | ')}}</p>
+
+    </div>
+
+</ion-content>

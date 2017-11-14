@@ -1,56 +1,24 @@
 <ion-header>
     <ion-navbar>
+        <button ion-button menuToggle icon-only>
+            <ion-icon name='menu'></ion-icon>
+        </button>
         <ion-title>
-            Ionic Blank
+            Welcome beginner!
         </ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
-    <h1>Creating SVG Elements Based on Data</h1>
-    <div id="myCircles"></div>
+    <h1>D3.js with Ionic</h1>
 
+    <p>These examples are based on <a href="https://www.dashingd3js.com/table-of-contents" target="_blank">Dashing D3.js tutorials</a>.</p>
+    <p>They are adapted in Typescript 2 for ionic 3. Source code is available <a href="https://github.com/proustibat/d3js-ionic" target="_blank">on this github repo</a>.</p>
 
-    <h1>Using the SVG Coordinate Space</h1>
-    <div id="myCoordinatedCircles"></div>
+    <h2>What is D3.js</h2>
 
-
-
-    <h1>SVG Basic Shapes using JSON data</h1>
-
-    <div id="myCoordinatedCirclesWithJSON"></div>
-
-    <div id="myRectangles"></div>
-    <div id="myEllipsis"></div>
-
-    <div id="myLines"></div>
-
-
-
-    <h1>SVG Paths</h1>
-    <ion-item>
-        <ion-label>Interpolation</ion-label>
-        <ion-select [(ngModel)]="interpolationSelected" (ionChange)="createSvgPathsLines($event)">
-            <ion-option *ngFor="let interpolation of interpolationsList">{{interpolation}}</ion-option>
-        </ion-select>
-    </ion-item>
-    <div id="myPathsLines"></div>
-
-
-    <h1>Dynamic SVG Coordinate Space</h1>
-    <div id="dynamicSvg"></div>
-
-
-    <h1>Scales</h1>
-    <div id="scaleSvg">
-        <h2>Initial Data</h2>
-        <p *ngIf="initialDataToScale">{{initialDataToScale.join(' | ')}}</p>
-        <h2>Scaled Data</h2>
-        <p *ngIf="scaledData">{{scaledData.join(' | ')}}</p>
-    </div>
-
-
-
+    <p>D3.js is a JavaScript library for manipulating documents based on data. D3 helps you bring data to life using HTML, SVG, and CSS. D3’s emphasis on web standards gives you the full capabilities of modern browsers without tying yourself to a proprietary framework, combining powerful visualization components and a data-driven approach to DOM manipulation.</p>
+    <p><a href="https://d3js.org/" target="_blank">Learn more about D3.js</a></p>
 
 </ion-content>
