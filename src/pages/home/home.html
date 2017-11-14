@@ -8,9 +8,12 @@
 
 <ion-content padding>
 
-    <div id="myCircles"><h1>Creating SVG Elements Based on Data</h1></div>
+    <h1>Creating SVG Elements Based on Data</h1>
+    <div id="myCircles"></div>
 
-    <div id="myCoordinatedCircles"><h1>Using the SVG Coordinate Space</h1></div>
+
+    <h1>Using the SVG Coordinate Space</h1>
+    <div id="myCoordinatedCircles"></div>
 
 
 
@@ -18,10 +21,8 @@
 
     <div id="myCoordinatedCirclesWithJSON"></div>
 
-
     <div id="myRectangles"></div>
     <div id="myEllipsis"></div>
-
 
     <div id="myLines"></div>
 
@@ -34,11 +35,10 @@
             <ion-option *ngFor="let interpolation of interpolationsList">{{interpolation}}</ion-option>
         </ion-select>
     </ion-item>
-    <div id="myPathsLines">
-        <!--<ion-select [(ngModel)]="pathInterpolation" (ionChange)="onInterpolationChange($interpolationName)">-->
-            <!--<ion-option *ngFor="let interpolation of interpolations" [value]="interpolation.value">{{interpolation.name}}</ion-option>-->
-            <!--<ion-option *ngFor="let interpolation of interpolations" [value] = "interpolation.value">{{interpolation.name}}</ion-option>-->
+    <div id="myPathsLines"></div>
 
-        <!--</ion-select>-->
-    </div>
+
+    <h1>Dynamic SVG Coordinate Space</h1>
+    <div id="dynamicSvg"></div>
+
 </ion-content>

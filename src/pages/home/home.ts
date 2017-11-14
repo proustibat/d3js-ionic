@@ -31,8 +31,6 @@ export class HomePage {
         {name:"stepBefore", value: d3Shape.curveStepBefore}
     ];
 
-    pathInterpolation:any;
-
     interpolationSelected:string = 'linear';
     interpolationsList:any = this.interpolations.map(interpolation => {
         return interpolation.name;
@@ -44,8 +42,8 @@ export class HomePage {
     ionViewDidLoad() {
         console.log('HomePage.ionViewDidLoad');
         this.createCircles();
-        this.createCoordinatedCircles();
-        this.createCoordinatedCirclesWithJSON();
+        this.createCoordinateCircles();
+        this.createCoordinateCirclesWithJSON();
 
         this.createRectangles();
         this.createEllipsis();
@@ -53,6 +51,8 @@ export class HomePage {
         this.createLines();
 
         this.createSvgPathsLines();
+
+        this.createDynamicSvg();
     }
 
     createCircles():void {
@@ -83,7 +83,7 @@ export class HomePage {
 
     }
 
-    createCoordinatedCircles():void {
+    createCoordinateCircles():void {
         let spaceCircles = [30, 70, 110];
         let svgContainer = d3.select("#myCoordinatedCircles").append("svg")
             .attr("width", 300)
@@ -109,7 +109,7 @@ export class HomePage {
             });
     }
 
-    createCoordinatedCirclesWithJSON():void {
+    createCoordinateCirclesWithJSON():void {
 
         let jsonCircles = [
             { "x_axis": 30, "y_axis": 30, "radius": 20, "color" : "green" },
@@ -236,4 +236,44 @@ export class HomePage {
             .attr("stroke-width", 2)
             .attr("fill", "yellow");
     }
+
+
+    createDynamicSvg(): void {
+        let jsonRectangles = [
+            { "x": 10, "y": 10, "height": 20, "width":20, "color" : "green" },
+            { "x": 160, "y": 40, "height": 20, "width":20, "color" : "purple" },
+            { "x": 70, "y": 70, "height": 20, "width":20, "color" : "red" }];
+
+        let max = this.getMaxSVG(jsonRectangles, 'x', 'y', 'width', 'height');
+
+        let svgContainer = d3.select("#dynamicSvg").append("svg")
+            .attr("width", max.x)
+            .attr("height", max.y)
+            .style("border", "1px solid black");
+
+        let rectangles = svgContainer.selectAll("rect")
+            .data(jsonRectangles)
+            .enter()
+            .append('rect');
+
+        let rectanglesAttributes = rectangles
+            .attr("x", (d) => { return d.x; })
+            .attr("y", (d) => { return d.y; })
+            .attr("width", (d) => { return d.width; })
+            .attr("height", (d) => { return d.height; })
+            .style("fill", (d) =>{ return d.color; });
+    }
+
+    getMaxSVG(data:any, xKey:string, yKey:string, wKey:string, hKey:string):{x:number, y:number} {
+        let max = {
+            x:0,
+            y:0
+        };
+        data.forEach( item => {
+            max.x = Math.max(item[xKey] + item[wKey], max.x);
+            max.y = Math.max(item[yKey] + item[hKey], max.y);
+        });
+        return max;
+    }
+
 }
