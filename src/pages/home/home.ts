@@ -3,6 +3,8 @@ import { NavController } from 'ionic-angular';
 
 import * as d3 from 'd3-selection';
 import * as d3Shape from "d3-shape";
+import * as d3Scale from "d3-scale";
+import * as d3Array from "d3-array";
 
 @Component({
     selector: 'page-home',
@@ -36,6 +38,10 @@ export class HomePage {
         return interpolation.name;
     });
 
+
+    initialDataToScale:Array<number>;
+    scaledData:Array<number>;
+
     constructor(public navCtrl: NavController) {
 
     }
@@ -53,6 +59,8 @@ export class HomePage {
         this.createSvgPathsLines();
 
         this.createDynamicSvg();
+
+        this.createScales();
     }
 
     createCircles():void {
@@ -263,7 +271,6 @@ export class HomePage {
             .attr("height", (d) => { return d.height; })
             .style("fill", (d) =>{ return d.color; });
     }
-
     getMaxSVG(data:any, xKey:string, yKey:string, wKey:string, hKey:string):{x:number, y:number} {
         let max = {
             x:0,
@@ -274,6 +281,21 @@ export class HomePage {
             max.y = Math.max(item[yKey] + item[hKey], max.y);
         });
         return max;
+    }
+
+
+    createScales():void {
+        this.initialDataToScale = [0, 1000, 3000, 2000, 5000, 4000, 7000, 6000, 9000, 8000, 10000];
+
+        let linearScale = d3Scale
+            .scaleLinear()
+            .domain([ d3Array.min(this.initialDataToScale), d3Array.max(this.initialDataToScale) ])
+            .range([ 0, 100 ]);
+
+        this.scaledData = [];
+        this.initialDataToScale.forEach((data)=> {
+            this.scaledData.push(linearScale(data));
+        });
     }
 
 }

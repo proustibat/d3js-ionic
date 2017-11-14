@@ -41,4 +41,16 @@
     <h1>Dynamic SVG Coordinate Space</h1>
     <div id="dynamicSvg"></div>
 
+
+    <h1>Scales</h1>
+    <div id="scaleSvg">
+        <h2>Initial Data</h2>
+        <p *ngIf="initialDataToScale">{{initialDataToScale.join(' | ')}}</p>
+        <h2>Scaled Data</h2>
+        <p *ngIf="scaledData">{{scaledData.join(' | ')}}</p>
+    </div>
+
+
+
+
 </ion-content>
