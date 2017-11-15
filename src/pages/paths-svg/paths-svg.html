@@ -12,15 +12,16 @@
 
     <h1>SVG Paths</h1>
 
-    <ion-item>
+    <ion-item no-lines>
 
         <ion-label>Interpolation</ion-label>
 
-        <ion-select [(ngModel)]="interpolationSelected" (ionChange)="createSvgPathsLines($event)" interface="action-sheet">
+        <ion-select [(ngModel)]="interpolationSelected" (ionChange)="createSvgPathsLines($event)" interface="popover">
             <ion-option *ngFor="let interpolation of interpolationsSelectList">{{interpolation}}</ion-option>
         </ion-select>
+
     </ion-item>
 
-    <div id="paths"></div>
+    <div id="paths" padding></div>
 
 </ion-content>
