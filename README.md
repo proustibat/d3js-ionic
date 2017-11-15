@@ -135,6 +135,7 @@ The project is licensed under the [GNU Affero General Public License v3.0 licens
 
 ### Complexity
 How simple or complicated the control flow of the application is. 
+
 [![Complexity](https://sonarcloud.io/api/badges/measure?key=prstbt.ionic.d3.app&metric=complexity)](https://sonarcloud.io/component_measures?id=prstbt.ionic.d3.app&metric=complexity) 
 [![Complexity per file](https://sonarcloud.io/api/badges/measure?key=prstbt.ionic.d3.app&metric=file_complexity)](https://sonarcloud.io/component_measures?id=prstbt.ionic.d3.app&metric=file_complexity)
 [![Cognitive Complexity](https://sonarcloud.io/api/badges/measure?key=prstbt.ionic.d3.app&metric=cognitive_complexity)](https://sonarcloud.io/component_measures?id=prstbt.ionic.d3.app&metric=cognitive_complexity)
