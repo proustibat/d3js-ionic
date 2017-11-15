@@ -110,7 +110,7 @@ ionic cordova run android --device
 ionic cordova run ios --device
 ```
 
-## Feel free to improve the app with us
+## Feel free to improve the app
 
 - I use [commitizen](https://github.com/commitizen/cz-cli), so if you wanna contribute to the project and create a pull request, please use it by running `git cz` instead of `git commit`.
 
