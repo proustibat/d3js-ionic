@@ -2,12 +2,21 @@
 
 ------------
 
-
-[![Sonar quality gate](https://sonarcloud.io/api/badges/gate?key=prstbt.ionic.d3.app)](https://sonarcloud.io/dashboard?id=prstbt.ionic.d3.app)
-[![Quality Gate Status](https://sonarcloud.io/api/badges/measure?key=prstbt.ionic.d3.app&metric=alert_status)](https://sonarcloud.io/component_measures?id=prstbt.ionic.d3.app&metric=alert_status)
-[![Dependencies Status](https://david-dm.org/proustibat/d3js-ionic/status.svg)](https://david-dm.org/proustibat/d3js-ionic)
-[![DevDependencies Status](https://david-dm.org/proustibat/d3js-ionic/dev-status.svg)](https://david-dm.org/proustibat/d3js-ionic?type=dev)
-[![GitHub license](https://img.shields.io/github/license/proustibat/d3js-ionic.svg)](https://github.com/proustibat/d3js-ionic/blob/master/LICENSE.md)
+<table>
+	<tr>
+		<td>
+			<a href='https://sonarcloud.io/dashboard?id=prstbt.ionic.d3.app'><img src='https://sonarcloud.io/api/badges/gate?key=prstbt.ionic.d3.app' alt='Sonar quality gate'/></a><br/>
+			<a href='https://sonarcloud.io/component_measures?id=prstbt.ionic.d3.app&metric=alert_status'><img src='https://sonarcloud.io/api/badges/measure?key=prstbt.ionic.d3.app&metric=alert_status' alt='Quality Gate Status'/></a>
+		</td>
+		<td>
+			<a href='https://david-dm.org/proustibat/d3js-ionic'><img src='https://david-dm.org/proustibat/d3js-ionic/status.svg' alt='dependencies Status'/></a><br/>
+			<a href='https://david-dm.org/proustibat/d3js-ionic?type=dev'><img src='https://david-dm.org/proustibat/d3js-ionic/dev-status.svg' alt='devDependencies Status'/></a><br/>
+		</td>
+    <td>
+      <a href='https://github.com/proustibat/d3js-ionic/blob/master/LICENSE.md'><img src='https://img.shields.io/github/license/proustibat/d3js-ionic.svg' alt='GitHub license'/></a><br/><br/>
+    </td>
+	</tr>
+</table>
 
 ----------------
 
@@ -192,6 +201,3 @@ Issues in this domain mark code where you will get behavior other than what was 
 [![Vulnerabilities](https://sonarcloud.io/api/badges/measure?key=prstbt.ionic.d3.app&metric=vulnerabilities)](https://sonarcloud.io/component_measures?id=prstbt.ionic.d3.app&metric=vulnerabilities)
 [![Security remediation effort	](https://sonarcloud.io/api/badges/measure?key=prstbt.ionic.d3.app&metric=security_remediation_effort)](https://sonarcloud.io/component_measures?id=prstbt.ionic.d3.app&metric=security_remediation_effort)
 [![Security Rating](https://sonarcloud.io/api/badges/measure?key=prstbt.ionic.d3.app&metric=security_rating)](https://sonarcloud.io/component_measures?id=prstbt.ionic.d3.app&metric=security_rating)
-
-
-
