@@ -4,13 +4,16 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
-import { MyApp } from './app.component';
-import { Pages } from "../pages/index";
+import { MyApp }        from './app.component';
+import { Pages }        from "../pages/index";
+import { Directives }   from "../directives/index";
+
 
 @NgModule({
     declarations: [
         MyApp,
         Pages,
+        Directives
     ],
     imports: [
         BrowserModule,
@@ -20,6 +23,7 @@ import { Pages } from "../pages/index";
     entryComponents: [
         MyApp,
         Pages,
+
     ],
     providers: [
         StatusBar,
