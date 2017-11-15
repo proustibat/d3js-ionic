@@ -1,7 +1,5 @@
 # D3.js with Ionic</h1>
 
-------------
-
 <table>
 	<tr>
 		<td>
