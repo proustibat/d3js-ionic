@@ -6,14 +6,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp }        from './app.component';
 import { Pages }        from "../pages/index";
-import { Directives }   from "../directives/index";
 
+import { IonPrismDirective } from "ion-prism";
 
 @NgModule({
     declarations: [
         MyApp,
         Pages,
-        Directives
+        IonPrismDirective
     ],
     imports: [
         BrowserModule,
