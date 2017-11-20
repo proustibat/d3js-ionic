@@ -11,6 +11,51 @@
 <ion-content padding>
 
     <h1>Dynamic SVG Coordinate Space</h1>
+    <p>How to make the SVG Coordinate Space scale up and/or down to fit the data?</p>
+
+    <p>Basically we have to change the width and height value of the SVG container to fit the max X and the max Y where the shapes will be drawn.: </p>
+    <textarea ion-prism="javascript">
+        // Loop through the array of JSON objects to get
+        // the max x-coordinate and the max y-coordinate
+        let max = this.getMaxSVG( jsonRectangles,
+            'x',
+            'y',
+            'width',
+            'height' );
+
+        let svgContainer = d3.select( '#dynamicSvg' ).append( 'svg' )
+            // dynamically change the width and height attributes
+            // of the SVG Container/Viewport according to the data
+            .attr( 'width', max.x )
+            .attr( 'height', max.y )
+            .style( 'border', '1px solid black' );
+    </textarea>
+
+    <p>What does the getMaxSVG method do?</p>
+    <textarea ion-prism="javascript">
+        /**
+         * The max x-coordinate and max y-coordinate will be the bottom right hand point of the rectangle
+         * @param data
+         * @param { string } xKey the x key property to loop through the data
+         * @param { string } yKey the y key property to loop through the data
+         * @param { string } wKey the width key property to loop through the data
+         * @param { string } hKey the height key property to loop through the data
+         * @returns { {x: number, y: number} }
+         */
+        getMaxSVG( data:any, xKey:string, yKey:string, wKey:string, hKey:string ): { x:number, y:number } {
+            let max = {
+                x:0,
+                y:0
+            };
+            data.forEach( item => {
+                max.x = Math.max( item[ xKey ] + item[wKey], max.x );
+                max.y = Math.max( item[ yKey ] + item[hKey], max.y );
+            });
+            return max;
+        }
+    </textarea>
+
+    <p>Result:</p>
     <div id="dynamicSvg"></div>
 
 </ion-content>
