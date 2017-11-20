@@ -14,7 +14,7 @@ export class BasicShapesPage {
         
         this.createCircles();
         this.createRectangles();
-        this.createEllipsis();
+        this.createEllipses();
         this.createLines()
         
     }
@@ -70,20 +70,20 @@ export class BasicShapesPage {
 
     }
 
-    createEllipsis():void {
+    createEllipses():void {
 
-        let jsonEllipsis = [
+        let jsonEllipses = [
             { 'cx': 50,     'cy': 20, 'rx': 50, 'ry': 20, 'color' : 'green' },
             { 'cx': 120,    'cy': 70, 'rx': 20, 'ry': 50, 'color' : 'purple' },
             { 'cx': 200,    'cy': 90, 'rx': 40, 'ry': 70, 'color' : 'red' }];
 
-        let svgContainer = d3.select( '#ellipsis' ).append( 'svg' )
+        let svgContainer = d3.select( '#ellipses' ).append( 'svg' )
             .attr( 'width', 300 )
             .attr( 'height', 200 )
             .style( 'border', '1px solid black' );
 
         let ellipses = svgContainer.selectAll( 'ellipse' )
-            .data( jsonEllipsis )
+            .data( jsonEllipses )
             .enter()
             .append( 'ellipse' );
 
