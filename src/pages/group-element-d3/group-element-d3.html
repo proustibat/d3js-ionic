@@ -15,21 +15,133 @@
     <h1>Group Element (D3 Part)</h1>
 
 
+
     <h2>4 SVG basic shape elements with D3.js</h2>
 
     <textarea ion-prism="javascript">
-        let circleGroup = svgContainer.append('g');
-    </textarea>
+        // Appending an SVG Group Element to the already defined SVG Container
+        let circleGroup = svgContainer.append( 'g' );
+        let rectangleGroup = svgContainer.append( 'g' );
 
-    <div id="svg-element"></div>
+        // Add circles to the group container
+        let circles = circleGroup.selectAll( 'circle' )
+            .data( circleData )
+            .enter()
+            .append( 'circle' );
+
+        circles
+            .attr( 'cx', d => d.cx )
+            .attr( 'cy', d => d.cy )
+            .attr( 'r', d => d.radius )
+            .style( 'fill', d => d.color );
+
+
+        // Add rectangles to the group container
+        let rectangles = rectangleGroup.selectAll( 'rect' )
+            .data( rectangleData )
+            .enter()
+            .append( 'rect' );
+
+        rectangles
+            .attr( 'x', d => d.rx )
+            .attr( 'y', d => d.ry )
+            .attr( 'height', d => d.height )
+            .attr( 'width', d => d.width )
+            .style( 'fill', d => d.color );
+    </textarea>
+    <div id="svg-element" class="svg-element"></div>
+
 
 
     <h2>Transforming SVG Elements Together with D3.js</h2>
 
-    <textarea ion-prism="javascript">
-        circleGroup.attr('transform', 'translate(80,0)');
-    </textarea>
 
-    <div id="svg-element-transform"></div>
+    <h3>Translate</h3>
+    <textarea ion-prism="javascript">
+        circleGroup.attr('transform', 'translate( 80,0 )');
+    </textarea>
+    <div class="svg-element"
+         id="svg-element-transform-translate"
+         data-transformations='[{
+            "group":"circles",
+            "properties": [
+                "translate( 80, 0 )"
+            ]}]'>
+    </div>
+
+
+    <h3>Scale</h3>
+    <textarea ion-prism="javascript">
+        circleGroup.attr('transform', 'scale( 2, 1 )');
+        rectangleGroup.attr('transform', 'scale( 0.5 )');
+    </textarea>
+    <div class="svg-element"
+         id="svg-element-transform-scale"
+         data-transformations='[{
+            "group": "circles",
+            "properties": [
+                "scale( 2, 1 )"
+            ]}, {
+            "group": "rectangles",
+            "properties": [
+                "scale( 0.5 )"
+            ]}
+        ]'>
+    </div>
+
+
+    <h3>Skew</h3>
+    <textarea ion-prism="javascript">
+        circleGroup.attr('transform', 'skewX( 20 )');
+        rectangleGroup.attr('transform', 'skewY( 8 )');
+    </textarea>
+    <div class="svg-element"
+         id="svg-element-transform-skew"
+         data-transformations='[{
+            "group":"circles",
+            "properties": [
+                "skewX( 20 )"
+            ]}, {
+            "group": "rectangles",
+            "properties": [
+                "skewY( 8 )"
+            ]}
+        ]'>
+    </div>
+
+
+    <h3>Matrix</h3>
+    <textarea ion-prism="javascript">
+        circleGroup.attr('transform', 'matrix( 1, 2, 3, 4, 5, 6 )');
+    </textarea>
+    <div class="svg-element"
+         id="svg-element-transform-matrix"
+         data-transformations='[{
+            "group":"circles",
+            "properties": [
+                "matrix( 1, 2, 3, 4, 5, 6 )"
+            ]}
+        ]'>
+    </div>
+
+
+    <h3>Rotate</h3>
+    <textarea ion-prism="javascript">
+        circleGroup.attr('transform', 'rotate( 45, 50, 50 )');
+        rectangleGroup.attr('transform', 'rotate( -5 )');
+    </textarea>
+    <div class="svg-element"
+         id="svg-element-transform-rotate"
+         data-transformations='[{
+            "group":"circles",
+            "properties": [
+                "rotate( 45, 50, 50 )"
+            ]}, {
+            "group": "rectangles",
+            "properties": [
+                "rotate( -5 )"
+            ]}
+        ]'>
+    </div>
 
 </ion-content>
