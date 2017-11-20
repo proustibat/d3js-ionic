@@ -10,7 +10,7 @@ import { CurveBundleFactory, CurveFactory } from 'd3-shape';
 })
 
 export class PathsSvgPage {
-    
+
     interpolations:Array<{ name:string, value:CurveFactory|CurveBundleFactory }> = [
         { name:'basis',             value: d3Shape.curveBasis },
         { name:'basisClosed',       value: d3Shape.curveBasisClosed },
@@ -31,9 +31,9 @@ export class PathsSvgPage {
         { name:'stepAfter',         value: d3Shape.curveStepAfter },
         { name:'stepBefore',        value: d3Shape.curveStepBefore }
     ];
-    
+
     interpolationSelected:string = 'linear';
-    
+
     interpolationsSelectList:Array<string> = this.interpolations.map( interpolation => interpolation.name );
 
     constructor() {}
@@ -46,6 +46,7 @@ export class PathsSvgPage {
 
     createSvgPathsLines(): void {
 
+        // Data set
         let lineData = [
             { 'x': 1,       'y': 90},   { 'x': 20,  'y': 20 },
             { 'x': 40,      'y': 50},   { 'x': 60,  'y': 100 },
@@ -55,11 +56,7 @@ export class PathsSvgPage {
             { 'x': 200,     'y': 5},    { 'x': 220, 'y': 60 },
             { 'x': 240,     'y': 90},   { 'x': 260, 'y': 120 }];
 
-        let lineGenerator = d3Shape.line<any>()
-            .x( d => d.x )
-            .y( d => d.y )
-            .curve(this.interpolations.find( interpolation => interpolation.name === this.interpolationSelected ).value );
-
+        // Clear the previous svg drawn
         d3.select( '#paths svg' ).remove();
 
         let svgContainer = d3.select( '#paths' ).append( 'svg' )
@@ -67,7 +64,15 @@ export class PathsSvgPage {
             .attr( 'height', 200 )
             .style( 'border', '1px solid black' );
 
-         svgContainer.append('path')
+        // Generator
+        let lineGenerator = d3Shape.line<any>()
+            .x( d => d.x )
+            .y( d => d.y )
+            .curve( this.interpolations.find( interpolation => interpolation.name === this.interpolationSelected ).value );
+
+
+        // Provide the data to the path container
+        svgContainer.append('path')
             .attr( 'd', lineGenerator( lineData ) )
             .attr( 'stroke', 'green' )
             .attr( 'stroke-width', 2 )
