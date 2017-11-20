@@ -12,14 +12,53 @@
 
     <h1>Scales</h1>
 
-    <div id="scaleSvg">
+    <p>Resize the data to fit into the pre-defined SVG Coordinate Space</p>
+    <p>In this section we need to import d3-scale and d3-array:</p>
+    <textarea ion-prism="javascript">
+        import * as d3Scale from 'd3-scale';
+        import * as d3Array from 'd3-array';
+    </textarea>
 
-        <h2>Initial Data</h2>
-        <p *ngIf="initialDataToScale">{{initialDataToScale.join(' | ')}}</p>
 
-        <h2>Scaled Data</h2>
-        <p *ngIf="scaledData">{{scaledData.join(' | ')}}</p>
+    <h2>Linear Scale</h2>
+    <textarea ion-prism="javascript">
+        this.initialDataToScale = [ 0, 1000, 3000, 2000, 5000, 4000, 7000, 6000, 9000, 8000, 10000 ];
 
-    </div>
+        let linearScale = d3Scale
+            .scaleLinear()
+            .domain([
+                d3Array.min( this.initialDataToScale ),
+                d3Array.max( this.initialDataToScale )
+            ])
+            .range( [ 0, 100 ] );
+
+        this.scaledData = this.initialDataToScale.map( data => linearScale( data ) );
+
+        </textarea>
+    <h3>Initial Data</h3>
+    <p *ngIf="initialDataToScale">{{initialDataToScale.join(' | ')}}</p>
+
+    <h3>Scaled Data</h3>
+    <p *ngIf="scaledData">{{scaledData.join(' | ')}}</p>
+
+
+    <h2>Interpolator functions available in the interpolator factory</h2>
+    <ion-list>
+        <ion-item>scaleBand</ion-item>
+        <ion-item>scaleIdentity</ion-item>
+        <ion-item>scaleLinear</ion-item>
+        <ion-item>scaleLog</ion-item>
+        <ion-item>scaleOrdinal</ion-item>
+        <ion-item>scalePoint</ion-item>
+        <ion-item>scalePow</ion-item>
+        <ion-item>scaleQuantile</ion-item>
+        <ion-item>scaleQuantize</ion-item>
+        <ion-item>scaleSequential</ion-item>
+        <ion-item>scaleSqrt</ion-item>
+        <ion-item>scaleThreshold</ion-item>
+        <ion-item>scaleTime</ion-item>
+        <ion-item>scaleUtc</ion-item>
+    </ion-list>
+
 
 </ion-content>
