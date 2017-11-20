@@ -18,3 +18,30 @@
 .prism {
   user-select: text;
 }
+
+svg {
+  border: 1px solid color($colors, 'primary');
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+  color: color($colors, primary);
+  font-family: 'Hind Madurai', sans-serif;
+}
+
+h1 {
+  background: color($colors, dark);
+  color: color($colors, light);
+  text-align: center;
+  padding: $content-padding $heading-padding;
+}
+h2 {
+  border-top: 2px solid color($colors, dark);
+  border-bottom: 2px solid color($colors, dark);
+  padding: $heading-padding 0;
+}
+
+h3, h5, h6 {
+  font-family: $font-family-base;
+  font-weight: bold;
+}

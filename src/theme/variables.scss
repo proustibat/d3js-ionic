@@ -32,19 +32,74 @@ $app-direction: ltr;
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
 
+//$colors: (
+//  primary:    #488aff,
+//  secondary:  #32db64,
+//  danger:     #f53d3d,
+//  light:      #f4f4f4,
+//  dark:       #222
+//);
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
+  primary:    #132757,
+  secondary:  #6AC2E8,
   danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  light:      #ECEEFF,
+  dark:       #001909
 );
+
+
+
+// Theme Variables
+// --------------------------------------------------
+//
+
+//
+//
+$text-color:                 color($colors, primary);
+$link-color:                 color($colors, dark);
+//$background-color:           #fff;
+//$subdued-text-color:         #666;
+//
+$font-family-base:              'Barlow', sans-serif;
+//$font-size-base:             1.4rem; // 1.4rem == 14px
+//
+//$content-padding:            16px;
+//$content-margin:             16px;
+$heading-padding:               8px;
+//
+$toolbar-background:         color($colors, light);
+//$toolbar-border-color:       color($colors, dark);
+//$toolbar-text-color:         color($colors, dark);
+//$toolbar-active-color:       $link-color;
+//$toolbar-inactive-color:     #8c8c8c;
+//
+//$tabs-background:            #f8f8f8;
+//$tabs-border-color:          #b2b2b2;
+//$tabs-tab-color-inactive:    #8c8c8c;
+//$tabs-tab-color-active:      $link-color;
+//
+//$list-text-color:            $text-color;
+//$list-background-color:      $background-color;
+//$list-border-color:          #c8c7cc;
+
+
+$button-background: color($colors, secondary);
+
+
+// App Typography
+// --------------------------------------------------
+$h1-font-size:  2.8rem;
+$h2-font-size:  2.4rem;
+$h3-font-size:  1.6rem;
+$h4-font-size:  1.6rem;
+$h5-font-size:  1.2rem;
+$h6-font-size:  1.2rem;
 
 
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
-
+$button-ios-background-color: $button-background;
 
 
 
@@ -52,14 +107,14 @@ $colors: (
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
-
+$button-md-background-color: $button-background;
 
 
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
 
-
+$button-wp-background-color: $button-background;
 
 
 // App Theme
@@ -85,3 +140,5 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+@import "../assets/fonts/index";
+

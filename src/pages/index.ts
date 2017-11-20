@@ -14,8 +14,8 @@ export const PagesList = [
     { component: PathsSvgPage,          title: 'SVG Paths' },
     { component: DynamicSvgCoordPage,   title: 'Dynamic coordinate space' },
     { component: ScalesPage,            title: 'Scales' },
-    { component: GroupElementPage,      title: 'Group Element ( SVG Part)' },
-    { component: GroupElementD3Page,    title: 'Group Element with D3' },
+    { component: GroupElementPage,      title: 'Group Element (SVG Part.)' },
+    { component: GroupElementD3Page,    title: 'Group Element (D3 Part.)' },
 ];
 
 export const Pages = PagesList.map(page=> {
