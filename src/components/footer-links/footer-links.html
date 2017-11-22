@@ -1,0 +1,43 @@
+<ion-buttons ion-row no-margin no-padding justify-content-between align-items-center>
+
+    <ion-col col-auto no-padding no-margin>
+        <button *ngIf="previousPage"
+                color="dark"
+                ion-button
+                small
+                round
+                icon-only
+                no-margin
+                no-padding
+                (click)="openPage(previousPage.component)">
+            <ion-icon name="arrow-back"></ion-icon>
+        </button>
+    </ion-col>
+
+    <ion-col col-auto no-padding no-margin>
+        <a *ngIf="tutorialUrl"
+           ion-button
+           round
+           padding
+           color="dark"
+           text-wrap href="{{tutorialUrl}}"
+           target="_blank">
+            Read this tutorial section<br/> on Dashing D3.JS
+        </a>
+    </ion-col>
+
+    <ion-col col-auto no-padding no-margin>
+        <button *ngIf="nextPage"
+                color="dark"
+                ion-button
+                small
+                round
+                icon-only
+                no-margin
+                no-padding
+                (click)="openPage(nextPage.component)">
+            <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+    </ion-col>
+
+</ion-buttons>

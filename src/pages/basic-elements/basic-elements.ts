@@ -8,11 +8,14 @@ import * as d3 from 'd3-selection';
 })
 export class BasicElementsPage {
 
-    constructor() {}
+    constructor() {
+
+    }
 
     ionViewDidLoad():void {
         this.createCircles();
         this.createCoordinateCircles();
+
     }
 
     createCircles():void {

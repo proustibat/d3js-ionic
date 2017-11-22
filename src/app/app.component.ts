@@ -22,6 +22,7 @@ export class MyApp {
     }
 
     openPage(page) {
+        // page.component !== this.nav.getActive().component ? this.nav.push(page.component) : console.log('already here');
         page.component !== this.nav.getActive().component ? this.nav.setRoot(page.component) : console.log('already here');
     }
 

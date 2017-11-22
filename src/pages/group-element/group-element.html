@@ -2,65 +2,81 @@
     <common-header></common-header>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 
-    <h1>Group Element (SVG)</h1>
+    <h1 no-margin margin-bottom>Group Element (SVG)</h1>
 
 
     <h2>Grouping SVG Elements Together</h2>
 
-    <p>4 SVG basic shape elements:</p>
 
-    <textarea ion-prism="svg">
-        <svg width="200" height="200">
-            <circle cx="20" cy="20" r="20" fill="green" />
-            <circle cx="70" cy="70" r="20" fill="purple" />
-            <rect x="110" y="110" height="30" width="30" fill="blue" />
-            <rect x="160" y="160" height="30" width="30" fill="red" />
-        </svg>
-    </textarea>
-
-    <svg width="200" height="200">
-        <circle cx="20" cy="20" r="20" fill="green" />
-        <circle cx="70" cy="70" r="20" fill="purple" />
-        <rect x="110" y="110" height="30" width="30" fill="blue" />
-        <rect x="160" y="160" height="30" width="30" fill="red" />
-    </svg>
-
-
-    <p>The same basic shape elements with groups:</p>
-
-    <textarea ion-prism="svg">
-        <svg width="200" height="200">
-            <g>
+    <div padding>
+        <p>4 SVG basic shape elements:</p>
+        <textarea ion-prism="svg">
+            <svg width="200" height="200">
                 <circle cx="20" cy="20" r="20" fill="green" />
                 <circle cx="70" cy="70" r="20" fill="purple" />
-            </g>
-            <g>
                 <rect x="110" y="110" height="30" width="30" fill="blue" />
                 <rect x="160" y="160" height="30" width="30" fill="red" />
-            </g>
-        </svg>
-    </textarea>
+            </svg>
+        </textarea>
 
-    <svg width="200" height="200">
-        <g>
-            <circle cx="20" cy="20" r="20" fill="green" />
-            <circle cx="70" cy="70" r="20" fill="purple" />
-        </g>
-        <g>
-            <rect x="110" y="110" height="30" width="30" fill="blue" />
-            <rect x="160" y="160" height="30" width="30" fill="red" />
-        </g>
-    </svg>
+            <svg width="200" height="200">
+                <circle cx="20" cy="20" r="20" fill="green" />
+                <circle cx="70" cy="70" r="20" fill="purple" />
+                <rect x="110" y="110" height="30" width="30" fill="blue" />
+                <rect x="160" y="160" height="30" width="30" fill="red" />
+            </svg>
+
+
+            <p>The same basic shape elements with groups:</p>
+
+            <textarea ion-prism="svg">
+            <svg width="200" height="200">
+                <g>
+                    <circle cx="20" cy="20" r="20" fill="green" />
+                    <circle cx="70" cy="70" r="20" fill="purple" />
+                </g>
+                <g>
+                    <rect x="110" y="110" height="30" width="30" fill="blue" />
+                    <rect x="160" y="160" height="30" width="30" fill="red" />
+                </g>
+            </svg>
+        </textarea>
+
+            <svg width="200" height="200">
+                <g>
+                    <circle cx="20" cy="20" r="20" fill="green" />
+                    <circle cx="70" cy="70" r="20" fill="purple" />
+                </g>
+                <g>
+                    <rect x="110" y="110" height="30" width="30" fill="blue" />
+                    <rect x="160" y="160" height="30" width="30" fill="red" />
+                </g>
+            </svg>
+    </div>
+
 
 
 
     <h2>Transforming SVG Elements Together</h2>
 
-    <p>Add 80 units to the cx attribute of each circles</p>
+    <div padding>
+        <p>Add 80 units to the cx attribute of each circles</p>
 
-    <textarea ion-prism="svg">
+        <textarea ion-prism="svg">
+            <svg width="200" height="200">
+                <g>
+                    <circle cx="100" cy="20" r="20" fill="green" />
+                    <circle cx="150" cy="70" r="20" fill="purple" />
+                </g>
+                <g>
+                    <rect x="110" y="110" height="30" width="30" fill="blue" />
+                    <rect x="160" y="160" height="30" width="30" fill="red" />
+                </g>
+            </svg>
+        </textarea>
+
         <svg width="200" height="200">
             <g>
                 <circle cx="100" cy="20" r="20" fill="green" />
@@ -71,18 +87,7 @@
                 <rect x="160" y="160" height="30" width="30" fill="red" />
             </g>
         </svg>
-    </textarea>
-
-    <svg width="200" height="200">
-        <g>
-            <circle cx="100" cy="20" r="20" fill="green" />
-            <circle cx="150" cy="70" r="20" fill="purple" />
-        </g>
-        <g>
-            <rect x="110" y="110" height="30" width="30" fill="blue" />
-            <rect x="160" y="160" height="30" width="30" fill="red" />
-        </g>
-    </svg>
+    </div>
 
 
 
@@ -90,9 +95,22 @@
 
     <h3>Translate</h3>
 
-    <p>This transform definition specifies a translation by x and y. This is equivalent to matrix(1 0 0 1 x y). If y is not provided, it is assumed to be zero.</p>
+    <div padding>
+        <p>This transform definition specifies a translation by x and y. This is equivalent to matrix(1 0 0 1 x y). If y is not provided, it is assumed to be zero.</p>
 
-    <textarea ion-prism="svg">
+        <textarea ion-prism="svg">
+            <svg width="200" height="200">
+                <g transform="translate(80,0)">
+                    <circle cx="20" cy="20" r="20" fill="green" />
+                    <circle cx="70" cy="70" r="20" fill="purple" />
+                </g>
+                <g>
+                    <rect x="110" y="110" height="30" width="30" fill="blue" />
+                    <rect x="160" y="160" height="30" width="30" fill="red" />
+                </g>
+            </svg>
+        </textarea>
+
         <svg width="200" height="200">
             <g transform="translate(80,0)">
                 <circle cx="20" cy="20" r="20" fill="green" />
@@ -103,26 +121,28 @@
                 <rect x="160" y="160" height="30" width="30" fill="red" />
             </g>
         </svg>
-    </textarea>
-
-    <svg width="200" height="200">
-        <g transform="translate(80,0)">
-            <circle cx="20" cy="20" r="20" fill="green" />
-            <circle cx="70" cy="70" r="20" fill="purple" />
-        </g>
-        <g>
-            <rect x="110" y="110" height="30" width="30" fill="blue" />
-            <rect x="160" y="160" height="30" width="30" fill="red" />
-        </g>
-    </svg>
+    </div>
 
 
 
     <h3>Scale</h3>
 
-    <p>This transform definition specifies a scale operation by x and y. This is equivalent to matrix(x 0 0 y 0 0). If y is not provided, it is assumed to be equal to x.</p>
+    <div padding>
+        <p>This transform definition specifies a scale operation by x and y. This is equivalent to matrix(x 0 0 y 0 0). If y is not provided, it is assumed to be equal to x.</p>
 
-    <textarea ion-prism="svg">
+        <textarea ion-prism="svg">
+            <svg width="200" height="200">
+                <g transform="scale(2, 1)">
+                    <circle cx="20" cy="20" r="20" fill="green" />
+                    <circle cx="70" cy="70" r="20" fill="purple" />
+                </g>
+                <g transform="scale(0.5)">
+                    <rect x="110" y="110" height="30" width="30" fill="blue" />
+                    <rect x="160" y="160" height="30" width="30" fill="red" />
+                </g>
+            </svg>
+        </textarea>
+
         <svg width="200" height="200">
             <g transform="scale(2, 1)">
                 <circle cx="20" cy="20" r="20" fill="green" />
@@ -133,25 +153,27 @@
                 <rect x="160" y="160" height="30" width="30" fill="red" />
             </g>
         </svg>
-    </textarea>
+    </div>
 
-    <svg width="200" height="200">
-        <g transform="scale(2, 1)">
-            <circle cx="20" cy="20" r="20" fill="green" />
-            <circle cx="70" cy="70" r="20" fill="purple" />
-        </g>
-        <g transform="scale(0.5)">
-            <rect x="110" y="110" height="30" width="30" fill="blue" />
-            <rect x="160" y="160" height="30" width="30" fill="red" />
-        </g>
-    </svg>
 
 
     <h3>Skew : skewX(a), skewY(a)</h3>
+    <div padding>
+        <p>This transform definition specifies a skew transformation along the x or y axis by a degrees.</p>
 
-    <p>This transform definition specifies a skew transformation along the x or y axis by a degrees.</p>
+        <textarea ion-prism="svg">
+            <svg width="200" height="200">
+                <g transform="skewX(20)">
+                    <circle cx="20" cy="20" r="20" fill="green" />
+                    <circle cx="70" cy="70" r="20" fill="purple" />
+                </g>
+                <g transform="skewY(8)">
+                    <rect x="110" y="110" height="30" width="30" fill="blue" />
+                    <rect x="160" y="160" height="30" width="30" fill="red" />
+                </g>
+            </svg>
+        </textarea>
 
-    <textarea ion-prism="svg">
         <svg width="200" height="200">
             <g transform="skewX(20)">
                 <circle cx="20" cy="20" r="20" fill="green" />
@@ -162,57 +184,60 @@
                 <rect x="160" y="160" height="30" width="30" fill="red" />
             </g>
         </svg>
-    </textarea>
-
-    <svg width="200" height="200">
-        <g transform="skewX(20)">
-            <circle cx="20" cy="20" r="20" fill="green" />
-            <circle cx="70" cy="70" r="20" fill="purple" />
-        </g>
-        <g transform="skewY(8)">
-            <rect x="110" y="110" height="30" width="30" fill="blue" />
-            <rect x="160" y="160" height="30" width="30" fill="red" />
-        </g>
-    </svg>
+    </div>
 
 
     <h3>Matrix</h3>
-    <p>This transform definition specifies a transformation in the form of a transformation matrix of six values.</p>
+    <div padding>
+        <p>This transform definition specifies a transformation in the form of a transformation matrix of six values.</p>
 
-    <textarea ion-prism="svg">
+        <textarea ion-prism="svg">
+            <svg width="200" height="200">
+                <g transform="matrix(1,2,3,4,5,6)">
+                    <circle cx="20" cy="20" r="20" fill="green" />
+                    <circle cx="70" cy="70" r="20" fill="purple" />
+                </g>
+                <g>
+                    <rect x="110" y="110" height="30" width="30" fill="blue" />
+                    <rect x="160" y="160" height="30" width="30" fill="red" />
+                </g>
+            </svg>
+        </textarea>
+
         <svg width="200" height="200">
             <g transform="matrix(1,2,3,4,5,6)">
                 <circle cx="20" cy="20" r="20" fill="green" />
                 <circle cx="70" cy="70" r="20" fill="purple" />
             </g>
-            <g>
+            <g >
                 <rect x="110" y="110" height="30" width="30" fill="blue" />
                 <rect x="160" y="160" height="30" width="30" fill="red" />
             </g>
         </svg>
-    </textarea>
-
-    <svg width="200" height="200">
-        <g transform="matrix(1,2,3,4,5,6)">
-            <circle cx="20" cy="20" r="20" fill="green" />
-            <circle cx="70" cy="70" r="20" fill="purple" />
-        </g>
-        <g >
-            <rect x="110" y="110" height="30" width="30" fill="blue" />
-            <rect x="160" y="160" height="30" width="30" fill="red" />
-        </g>
-    </svg>
+    </div>
 
 
 
 
 
     <h3>Rotate</h3>
+    <div padding>
+        <p>This transform definition specifies a rotation by a degrees about a given point. If optional parameters x and y are not supplied, the rotate is about the origin of the current user coordinate system</p>
+        <p>If optional parameters x and y are supplied, the rotate is about the point (x, y)</p>
 
-    <p>This transform definition specifies a rotation by a degrees about a given point. If optional parameters x and y are not supplied, the rotate is about the origin of the current user coordinate system</p>
-    <p>If optional parameters x and y are supplied, the rotate is about the point (x, y)</p>
+        <textarea ion-prism="svg">
+            <svg width="200" height="200">
+                <g transform="rotate(45, 50, 50)">
+                    <circle cx="20" cy="20" r="20" fill="green" />
+                    <circle cx="70" cy="70" r="20" fill="purple" />
+                </g>
+                <g transform="rotate(-5)">
+                    <rect x="110" y="110" height="30" width="30" fill="blue" />
+                    <rect x="160" y="160" height="30" width="30" fill="red" />
+                </g>
+            </svg>
+        </textarea>
 
-    <textarea ion-prism="svg">
         <svg width="200" height="200">
             <g transform="rotate(45, 50, 50)">
                 <circle cx="20" cy="20" r="20" fill="green" />
@@ -223,26 +248,13 @@
                 <rect x="160" y="160" height="30" width="30" fill="red" />
             </g>
         </svg>
-    </textarea>
 
-    <svg width="200" height="200">
-        <g transform="rotate(45, 50, 50)">
-            <circle cx="20" cy="20" r="20" fill="green" />
-            <circle cx="70" cy="70" r="20" fill="purple" />
-        </g>
-        <g transform="rotate(-5)">
-            <rect x="110" y="110" height="30" width="30" fill="blue" />
-            <rect x="160" y="160" height="30" width="30" fill="red" />
-        </g>
-    </svg>
-
-    <p>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform" target="_blank">Learn more about transform on the MDN Web doc</a>
-    </p>
+        <p>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform" target="_blank">Learn more about transform on the MDN Web doc</a>
+        </p>
+    </div>
 
 
-    <ion-buttons text-center margin-top>
-        <a ion-button text-wrap href="https://www.dashingd3js.com/svg-group-element-and-d3js" target="_blank">Read this tutorial section on Dashing D3.JS</a>
-    </ion-buttons>
+    <footer-links color="dark" no-margin tutorialUrl="https://www.dashingd3js.com/svg-group-element-and-d3js"></footer-links>
 
 </ion-content>

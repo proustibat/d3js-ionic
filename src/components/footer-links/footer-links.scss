@@ -1,0 +1,20 @@
+footer-links {
+  display: block;
+  //position: absolute;
+  width: 100%;
+  left: 0;
+  padding: $content-padding;
+  margin-top: $content-margin;
+  background: color($colors, light);
+
+  button.button {
+    width: 10vw;
+    height: 10vw;
+  }
+
+  ion-col:first-child,
+  ion-col:last-child {
+    min-width: 10vw;
+    min-height: 10vw;
+  }
+}

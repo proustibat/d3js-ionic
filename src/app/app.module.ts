@@ -19,7 +19,9 @@ import { IonPrismDirective }    from "ion-prism";
     ],
     imports: [
         BrowserModule,
-        IonicModule.forRoot(MyApp)
+        IonicModule.forRoot(MyApp,{
+            menuType: 'push'
+        })
     ],
     bootstrap: [IonicApp],
     entryComponents: [

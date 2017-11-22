@@ -2,69 +2,70 @@
     <common-header></common-header>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 
-    <h1>SVG Paths</h1>
+    <h1 no-margin margin-bottom>SVG Paths</h1>
 
-    <p>The "curve" method sets the curve factory and returns the line generator.
-        Instead of just providing the data to the svg container, we provide the generated data by the chosen generator.</p>
+    <div padding>
+        <p>The "curve" method sets the curve factory and returns the line generator.
+            Instead of just providing the data to the svg container, we provide the generated data by the chosen generator.</p>
 
-    <textarea ion-prism="javascript">
-        // Generator
-        let lineGenerator = d3Shape.line()
-          .x( d => d.x )
-          .y( d => d.y )
-          .curve( d3Shape.curveLinear );
+        <textarea ion-prism="javascript">
+            // Generator
+            let lineGenerator = d3Shape.line()
+              .x( d => d.x )
+              .y( d => d.y )
+              .curve( d3Shape.curveLinear );
 
-        // Provide the data to the path container
-        svgContainer
-          .append('path')
-          .attr('d', lineGenerator( lineData ) )
-          .attr('stroke', 'green')
-          .attr('stroke-width', 2)
-          .attr('fill', 'yellow');
-    </textarea>
-
-
-    <ion-list no-lines>
-        <ion-list-header no-padding>Allowed factories</ion-list-header>
-        <ion-item no-padding>d3Shape.curveBasis</ion-item>
-        <ion-item no-padding>d3Shape.curveBasisClosed</ion-item>
-        <ion-item no-padding>d3Shape.curveBasisOpen</ion-item>
-        <ion-item no-padding>d3Shape.curveBundle</ion-item>
-        <ion-item no-padding>d3Shape.curveCardinal</ion-item>
-        <ion-item no-padding>d3Shape.curveCardinalClosed</ion-item>
-        <ion-item no-padding>d3Shape.curveCardinalOpen</ion-item>
-        <ion-item no-padding>d3Shape.curveCatmullRom</ion-item>
-        <ion-item no-padding>d3Shape.curveCatmullRomClosed</ion-item>
-        <ion-item no-padding>d3Shape.curveCatmullRomOpen</ion-item>
-        <ion-item no-padding>d3Shape.curveLinear</ion-item>
-        <ion-item no-padding>d3Shape.curveLinearClosed</ion-item>
-        <ion-item no-padding>d3Shape.curveMonotoneX</ion-item>
-        <ion-item no-padding>d3Shape.curveMonotoneY</ion-item>
-        <ion-item no-padding>d3Shape.curveNatural</ion-item>
-        <ion-item no-padding>d3Shape.curveStep</ion-item>
-        <ion-item no-padding>d3Shape.curveStepAfter</ion-item>
-        <ion-item no-padding>d3Shape.curveStepBefore</ion-item>
-    </ion-list>
+            // Provide the data to the path container
+            svgContainer
+              .append('path')
+              .attr('d', lineGenerator( lineData ) )
+              .attr('stroke', 'green')
+              .attr('stroke-width', 2)
+              .attr('fill', 'yellow');
+        </textarea>
 
 
-    <p>Examples</p>
+        <ion-list no-lines>
+            <ion-list-header no-padding>Allowed factories</ion-list-header>
+            <ion-item no-padding>d3Shape.curveBasis</ion-item>
+            <ion-item no-padding>d3Shape.curveBasisClosed</ion-item>
+            <ion-item no-padding>d3Shape.curveBasisOpen</ion-item>
+            <ion-item no-padding>d3Shape.curveBundle</ion-item>
+            <ion-item no-padding>d3Shape.curveCardinal</ion-item>
+            <ion-item no-padding>d3Shape.curveCardinalClosed</ion-item>
+            <ion-item no-padding>d3Shape.curveCardinalOpen</ion-item>
+            <ion-item no-padding>d3Shape.curveCatmullRom</ion-item>
+            <ion-item no-padding>d3Shape.curveCatmullRomClosed</ion-item>
+            <ion-item no-padding>d3Shape.curveCatmullRomOpen</ion-item>
+            <ion-item no-padding>d3Shape.curveLinear</ion-item>
+            <ion-item no-padding>d3Shape.curveLinearClosed</ion-item>
+            <ion-item no-padding>d3Shape.curveMonotoneX</ion-item>
+            <ion-item no-padding>d3Shape.curveMonotoneY</ion-item>
+            <ion-item no-padding>d3Shape.curveNatural</ion-item>
+            <ion-item no-padding>d3Shape.curveStep</ion-item>
+            <ion-item no-padding>d3Shape.curveStepAfter</ion-item>
+            <ion-item no-padding>d3Shape.curveStepBefore</ion-item>
+        </ion-list>
 
-    <ion-item no-lines no-padding>
 
-        <ion-label>Interpolation</ion-label>
+        <p>Examples</p>
 
-        <ion-select [(ngModel)]="interpolationSelected" (ionChange)="createSvgPathsLines($event)" interface="popover">
-            <ion-option *ngFor="let interpolation of interpolationsSelectList">{{interpolation}}</ion-option>
-        </ion-select>
+        <ion-item no-lines no-padding>
 
-    </ion-item>
+            <ion-label>Interpolation</ion-label>
 
-    <div id="paths"></div>
+            <ion-select [(ngModel)]="interpolationSelected" (ionChange)="createSvgPathsLines($event)" interface="popover">
+                <ion-option *ngFor="let interpolation of interpolationsSelectList">{{interpolation}}</ion-option>
+            </ion-select>
 
-    <ion-buttons text-center margin-top>
-        <a ion-button text-wrap href="https://www.dashingd3js.com/svg-paths-and-d3js" target="_blank">Read this tutorial section on Dashing D3.JS</a>
-    </ion-buttons>
+        </ion-item>
+
+        <div id="paths"></div>
+    </div>
+
+
+    <footer-links color="dark" no-margin tutorialUrl="https://www.dashingd3js.com/svg-paths-and-d3js"></footer-links>
 
 </ion-content>

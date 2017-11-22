@@ -38,10 +38,11 @@ h1 {
 h2 {
   border-top: 2px solid color($colors, dark);
   border-bottom: 2px solid color($colors, dark);
-  padding: $heading-padding 0;
+  padding: $heading-padding $content-padding;
 }
 
 h3, h5, h6 {
   font-family: $font-family-base;
   font-weight: bold;
+  padding: $heading-padding $content-padding;
 }
