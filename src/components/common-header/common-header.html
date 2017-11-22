@@ -1,4 +1,7 @@
-<button ion-button menuToggle icon-only>
-    <ion-icon name='menu'></ion-icon>
-</button>
-<ion-title>D3.js with Ionic</ion-title>
+<ion-navbar>
+    <button ion-button menuToggle icon-only>
+        <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title #ref><ng-content></ng-content></ion-title>
+</ion-navbar>
+
