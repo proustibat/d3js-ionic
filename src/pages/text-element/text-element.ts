@@ -12,12 +12,11 @@ export class TextElementPage {
     }
 
     ionViewDidLoad() {
-        console.log('ionViewDidLoad TextElementPage');
-
         this.createSVG();
     }
 
     createSVG(): void {
+
         // Data Set
         let circleData = [
             { 'cx': 20, 'cy': 20, 'radius': 20, 'color' : 'green' },
@@ -55,6 +54,7 @@ export class TextElementPage {
             .attr( 'font-family', 'sans-serif' )
             .attr( 'font-size', '20px' )
             .attr( 'fill', 'red' );
+        
     }
 
 }
