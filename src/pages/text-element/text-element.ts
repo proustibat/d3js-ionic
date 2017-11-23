@@ -54,7 +54,7 @@ export class TextElementPage {
             .attr( 'font-family', 'sans-serif' )
             .attr( 'font-size', '20px' )
             .attr( 'fill', 'red' );
-        
+
     }
 
 }
