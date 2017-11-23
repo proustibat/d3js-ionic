@@ -4,13 +4,13 @@
 
 <ion-content>
 
-    <h1 no-margin margin-bottom>SVG Paths</h1>
+    <h1 no-margin>SVG Paths</h1>
 
-    <div padding>
-        <p>The "curve" method sets the curve factory and returns the line generator.
+    <div padding-horizontal>
+        <p padding-vertical>The "curve" method sets the curve factory and returns the line generator.
             Instead of just providing the data to the svg container, we provide the generated data by the chosen generator.</p>
 
-        <textarea ion-prism="javascript">
+        <textarea ion-prism="javascript" >
             // Generator
             let lineGenerator = d3Shape.line()
               .x( d => d.x )
@@ -25,33 +25,35 @@
               .attr('stroke-width', 2)
               .attr('fill', 'yellow');
         </textarea>
+    </div>
+
+    <h2>Allowed factories</h2>
+    <div padding-horizontal>
+        <ul>
+            <li>d3Shape.curveBasis</li>
+            <li>d3Shape.curveBasisClosed</li>
+            <li>d3Shape.curveBasisOpen</li>
+            <li>d3Shape.curveBundle</li>
+            <li>d3Shape.curveCardinal</li>
+            <li>d3Shape.curveCardinalClosed</li>
+            <li>d3Shape.curveCardinalOpen</li>
+            <li>d3Shape.curveCatmullRom</li>
+            <li>d3Shape.curveCatmullRomClosed</li>
+            <li>d3Shape.curveCatmullRomOpen</li>
+            <li>d3Shape.curveLinear</li>
+            <li>d3Shape.curveLinearClosed</li>
+            <li>d3Shape.curveMonotoneX</li>
+            <li>d3Shape.curveMonotoneY</li>
+            <li>d3Shape.curveNatural</li>
+            <li>d3Shape.curveStep</li>
+            <li>d3Shape.curveStepAfter</li>
+            <li>d3Shape.curveStepBefore</li>
+        </ul>
+    </div>
 
 
-        <ion-list no-lines>
-            <ion-list-header no-padding>Allowed factories</ion-list-header>
-            <ion-item no-padding>d3Shape.curveBasis</ion-item>
-            <ion-item no-padding>d3Shape.curveBasisClosed</ion-item>
-            <ion-item no-padding>d3Shape.curveBasisOpen</ion-item>
-            <ion-item no-padding>d3Shape.curveBundle</ion-item>
-            <ion-item no-padding>d3Shape.curveCardinal</ion-item>
-            <ion-item no-padding>d3Shape.curveCardinalClosed</ion-item>
-            <ion-item no-padding>d3Shape.curveCardinalOpen</ion-item>
-            <ion-item no-padding>d3Shape.curveCatmullRom</ion-item>
-            <ion-item no-padding>d3Shape.curveCatmullRomClosed</ion-item>
-            <ion-item no-padding>d3Shape.curveCatmullRomOpen</ion-item>
-            <ion-item no-padding>d3Shape.curveLinear</ion-item>
-            <ion-item no-padding>d3Shape.curveLinearClosed</ion-item>
-            <ion-item no-padding>d3Shape.curveMonotoneX</ion-item>
-            <ion-item no-padding>d3Shape.curveMonotoneY</ion-item>
-            <ion-item no-padding>d3Shape.curveNatural</ion-item>
-            <ion-item no-padding>d3Shape.curveStep</ion-item>
-            <ion-item no-padding>d3Shape.curveStepAfter</ion-item>
-            <ion-item no-padding>d3Shape.curveStepBefore</ion-item>
-        </ion-list>
-
-
-        <p>Examples</p>
-
+    <h2>Examples</h2>
+    <div padding-horizontal padding-bottom>
         <ion-item no-lines no-padding>
 
             <ion-label>Interpolation</ion-label>

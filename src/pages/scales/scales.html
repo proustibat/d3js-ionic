@@ -5,10 +5,11 @@
 
 <ion-content>
 
-    <h1 no-margin margin-bottom>Scales</h1>
 
-    <div padding>
-        <p>Resize the data to fit into the pre-defined SVG Coordinate Space</p>
+    <h1 no-margin>Scales</h1>
+
+    <div padding-horizontal padding-bottom>
+        <p padding-top>Resize the data to fit into the pre-defined SVG Coordinate Space</p>
         <p>In this section we need to import d3-scale and d3-array:</p>
         <textarea ion-prism="javascript">
             import * as d3Scale from 'd3-scale';
@@ -18,8 +19,8 @@
 
 
 
-    <h2>Linear Scale</h2>
-    <div padding>
+    <h2 margin-bottom>Linear Scale Example</h2>
+    <div padding-horizontal>
         <textarea ion-prism="javascript">
             this.initialDataToScale = [ 0, 1000, 3000, 2000, 5000, 4000, 7000, 6000, 9000, 8000, 10000 ];
 
@@ -35,35 +36,36 @@
         </textarea>
     </div>
 
-    <h3>Initial Data</h3>
+
     <div padding>
+
+        <h3 no-padding>Initial Data</h3>
         <p *ngIf="initialDataToScale">{{initialDataToScale.join(' | ')}}</p>
-    </div>
 
-    <h3>Scaled Data</h3>
-    <div padding>
+        <h3 no-padding>Scaled Data</h3>
         <p *ngIf="scaledData">{{scaledData.join(' | ')}}</p>
+
     </div>
 
 
-    <h2>Interpolator functions available in the interpolator factory</h2>
-    <div padding>
-        <ion-list>
-            <ion-item>scaleBand</ion-item>
-            <ion-item>scaleIdentity</ion-item>
-            <ion-item>scaleLinear</ion-item>
-            <ion-item>scaleLog</ion-item>
-            <ion-item>scaleOrdinal</ion-item>
-            <ion-item>scalePoint</ion-item>
-            <ion-item>scalePow</ion-item>
-            <ion-item>scaleQuantile</ion-item>
-            <ion-item>scaleQuantize</ion-item>
-            <ion-item>scaleSequential</ion-item>
-            <ion-item>scaleSqrt</ion-item>
-            <ion-item>scaleThreshold</ion-item>
-            <ion-item>scaleTime</ion-item>
-            <ion-item>scaleUtc</ion-item>
-        </ion-list>
+    <h2 margin-bottom>Other interpolators available</h2>
+    <div padding-horizontal padding-bottom>
+        <ul>
+            <li>scaleBand</li>
+            <li>scaleIdentity</li>
+            <li>scaleLinear</li>
+            <li>scaleLog</li>
+            <li>scaleOrdinal</li>
+            <li>scalePoint</li>
+            <li>scalePow</li>
+            <li>scaleQuantile</li>
+            <li>scaleQuantize</li>
+            <li>scaleSequential</li>
+            <li>scaleSqrt</li>
+            <li>scaleThreshold</li>
+            <li>scaleTime</li>
+            <li>scaleUtc</li>
+        </ul>
     </div>
 
 

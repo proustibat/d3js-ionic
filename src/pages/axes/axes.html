@@ -5,7 +5,7 @@
 
 <ion-content>
 
-    <h1 no-margin margin-bottom>D3.js Axes</h1>
+    <h1 no-margin>D3.js Axes</h1>
 
     <div padding>
         <p>First, you need to import the d3-axis and d3-scale libraries:</p>
@@ -13,13 +13,12 @@
             import * as d3Axis from 'd3-axis';
             import * as d3Scale from 'd3-scale';
         </textarea>
-        <p>For what follows, remember what you learned about <a class="hljs-link"  (click)="navCtrl.push(scalePage, {isPushed:true})">Scales</a></p>
-        <p>Read the documentation about d3-axis with typescript on this <a href="https://github.com/d3/d3-axis" target="_blank">human-readable reference</a>.</p>
+        <p>For what follows, remember what you learned about scales in the <a class="hljs-link"  (click)="navCtrl.push(scalePage, {isPushed:true})">scales tutorial page</a>.</p>
+        <p>You can read the online documentation about d3-axis with typescript on this <a href="https://github.com/d3/d3-axis" target="_blank">human-readable reference</a>.</p>
     </div>
 
     <h2>Generating a D3.js Axis</h2>
-
-    <div padding>
+    <div padding-horizontal padding-bottom>
         <textarea ion-prism="javascript">
              //Create the Scale we will use for the Axis
             let axisScale = d3Scale
@@ -38,8 +37,7 @@
 
 
     <h2>Calling the D3.js Axis Function</h2>
-
-    <div padding>
+    <div padding-horizontal padding-bottom>
         <p>Here is the SVG viewport we will use: it has a width of 300.
             We want to map the numbers of 0 to 100 (this is the domain) onto the width our svg (300).
             So we define the range of the scale from 0 to 300.</p>
@@ -64,14 +62,9 @@
         <p>The result in the developer tool:</p>
         <img src="../../assets/imgs/screenshot-xaxis.png" alt="Axis svg in developer tool"/>
 
-    </div>
 
-
-    <h3>What about other d3-axis methods to create an axis?</h3>
-
-    <div padding>
-
-        <p>d3Axis.axisTop</p>
+        <h3 no-padding padding-top>What about other d3-axis methods to create an axis?</h3>
+        <h4 text-lowercase>d3Axis.axisTop</h4>
         <div id="svg-axis-top"
              class="svg-axis"
              data-config='{
@@ -82,7 +75,7 @@
                 "range": [0,300]}'>
         </div>
 
-        <p>d3Axis.axisLeft</p>
+        <h4 text-lowercase>d3Axis.axisLeft</h4>
         <div id="svg-axis-left"
              class="svg-axis"
              data-config='{
@@ -93,7 +86,7 @@
                 "range": [0,200]}'>
         </div>
 
-        <p>d3Axis.axisRight</p>
+        <h4 text-lowercase>d3Axis.axisRight</h4>
         <div id="svg-axis-right"
              class="svg-axis"
              data-config='{

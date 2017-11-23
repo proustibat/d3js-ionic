@@ -26,4 +26,4 @@ export const Pages = PagesList.map(page=> {
    return page.component;
 });
 
-export const RootPage = HomePage;
+export const RootPage = AxesPage;

@@ -78,5 +78,11 @@ export class PathsSvgPage {
             .attr( 'stroke-width', 2 )
             .attr( 'fill', 'yellow' );
 
+
+        // Add the name of the interpolation to the svg as a text element
+        svgContainer.append( 'text' )
+            .attr( 'x',  20 )
+            .attr( 'y',  parseInt( svgContainer.attr( 'height' ), 10 ) - 20  )
+            .text( this.interpolationSelected );
     }
 }

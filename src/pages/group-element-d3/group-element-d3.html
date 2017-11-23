@@ -7,9 +7,9 @@
     <h1 no-margin margin-bottom>Group Element (D3)</h1>
 
 
-
-    <h2>4 SVG basic shape elements with D3.js</h2>
-    <div padding>
+    <h2 margin-bottom>4 SVG basic shape elements with D3.js</h2>
+    <div padding-horizontal padding-bottom>
+        <p>Add an SVG Group Element to the defined SVG Container then add the shapes into this container.</p>
         <textarea ion-prism="javascript">
             // Appending an SVG Group Element to the already defined SVG Container
             let circleGroup = svgContainer.append( 'g' );
@@ -46,11 +46,11 @@
 
 
 
-    <h2>Transforming SVG Elements Together with D3.js</h2>
+    <h2 margin-bottom>Transforming SVG Elements Together with D3.js</h2>
 
 
-    <h3>Translate</h3>
-    <div padding>
+    <div padding-horizontal padding-bottom>
+        <h3 no-padding>Translate</h3>
         <textarea ion-prism="javascript">
             circleGroup.attr('transform', 'translate( 80,0 )');
         </textarea>
@@ -62,11 +62,8 @@
                     "translate( 80, 0 )"
                 ]}]'>
         </div>
-    </div>
 
-
-    <h3>Scale</h3>
-    <div padding>
+        <h3 no-padding>Scale</h3>
         <textarea ion-prism="javascript">
             circleGroup.attr('transform', 'scale( 2, 1 )');
             rectangleGroup.attr('transform', 'scale( 0.5 )');
@@ -84,11 +81,8 @@
                 ]}
             ]'>
         </div>
-    </div>
 
-
-    <h3>Skew</h3>
-    <div padding>
+        <h3 no-padding>Skew</h3>
         <textarea ion-prism="javascript">
             circleGroup.attr('transform', 'skewX( 20 )');
             rectangleGroup.attr('transform', 'skewY( 8 )');
@@ -106,11 +100,8 @@
                 ]}
             ]'>
         </div>
-    </div>
 
-
-    <h3>Matrix</h3>
-    <div padding>
+        <h3 no-padding>Matrix</h3>
         <textarea ion-prism="javascript">
             circleGroup.attr('transform', 'matrix( 1, 2, 3, 4, 5, 6 )');
         </textarea>
@@ -123,11 +114,8 @@
                 ]}
             ]'>
         </div>
-    </div>
 
-
-    <h3>Rotate</h3>
-    <div padding>
+        <h3 no-padding>Rotate</h3>
         <textarea ion-prism="javascript">
             circleGroup.attr('transform', 'rotate( 45, 50, 50 )');
             rectangleGroup.attr('transform', 'rotate( -5 )');
