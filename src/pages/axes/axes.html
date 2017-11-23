@@ -1,0 +1,117 @@
+<ion-header>
+    <common-header></common-header>
+</ion-header>
+
+
+<ion-content>
+
+    <h1 no-margin margin-bottom>D3.js Axes</h1>
+
+    <div padding>
+        <p>First, you need to import the d3-axis and d3-scale libraries:</p>
+        <textarea ion-prism="javascript">
+            import * as d3Axis from 'd3-axis';
+            import * as d3Scale from 'd3-scale';
+        </textarea>
+        <p>For what follows, remember what you learned about <a class="hljs-link"  (click)="navCtrl.push(scalePage, {isPushed:true})">Scales</a></p>
+        <p>Read the documentation about d3-axis with typescript on this <a href="https://github.com/d3/d3-axis" target="_blank">human-readable reference</a>.</p>
+    </div>
+
+    <h2>Generating a D3.js Axis</h2>
+
+    <div padding>
+        <textarea ion-prism="javascript">
+             //Create the Scale we will use for the Axis
+            let axisScale = d3Scale
+                .scaleLinear()
+                .domain([0,100])
+                .range([0,300]);
+
+            // Generate the D3.js Axis
+            this.xAxis = d3Axis.axisBottom(axisScale);
+
+            console.log('typeof(this.xAxis) = ', typeof(this.xAxis));
+            // typeof(this.xAxis) =  function
+        </textarea>
+        <p>Note that xAxis is a function.</p>
+    </div>
+
+
+    <h2>Calling the D3.js Axis Function</h2>
+
+    <div padding>
+        <p>Here is the SVG viewport we will use: it has a width of 300.
+            We want to map the numbers of 0 to 100 (this is the domain) onto the width our svg (300).
+            So we define the range of the scale from 0 to 300.</p>
+
+        <textarea ion-prism="javascript">
+            //Create the SVG Viewport selection
+            let svgContainer = d3.select("#axis-svg")
+                .append("svg")
+                .attr("width", 300)
+                .attr("height", 100);
+        </textarea>
+
+        <p>To call the axis function, we use the .call() method of the svg container: </p>
+        <textarea ion-prism="javascript">
+            // Create a group Element for the Axis elements and call the xAxis function
+            let xAxisGroup = svgContainer
+                .append("g")
+                .call( this.xAxis );
+        </textarea>
+        <div id="axis-svg"></div>
+
+        <p>The result in the developer tool:</p>
+        <img src="../../assets/imgs/screenshot-xaxis.png"/>
+
+    </div>
+
+
+    <h3>What about other d3-axis methods to create an axis?</h3>
+
+    <div padding>
+
+        <p>d3Axis.axisTop</p>
+        <div id="svg-axis-top"
+             class="svg-axis"
+             data-config='{
+                "width": 300,
+                "height": 100,
+                "axisPosition": "top",
+                "domain": [0,100],
+                "range": [0,300]}'>
+        </div>
+
+        <p>d3Axis.axisLeft</p>
+        <div id="svg-axis-left"
+             class="svg-axis"
+             data-config='{
+                "width": 300,
+                "height": 200,
+                "axisPosition": "left",
+                "domain": [0,100],
+                "range": [0,200]}'>
+        </div>
+
+        <p>d3Axis.axisRight</p>
+        <div id="svg-axis-right"
+             class="svg-axis"
+             data-config='{
+                "width": 300,
+                "height": 200,
+                "axisPosition": "right",
+                "domain": [0,100],
+                "range": [0,200]}'>
+        </div>
+
+        <p>Regardless of orientation, axes are always rendered at the origin. To change the position of the axis with respect to the chart, specify a transform attribute on the containing element. For example:</p>
+        <textarea ion-prism="javascript">
+            axisGroup.attr("transform", "translate(0,30)"););
+        </textarea>
+
+    </div>
+
+
+    <footer-links color="dark" no-margin tutorialUrl="https://www.dashingd3js.com/d3js-axes"></footer-links>
+
+</ion-content>

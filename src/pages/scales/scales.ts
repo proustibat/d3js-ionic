@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import * as d3Scale from 'd3-scale';
 import * as d3Array from 'd3-array';
+import {NavController, NavParams} from "ionic-angular";
 
 @Component({
     selector: 'page-scales',
@@ -12,7 +13,11 @@ export class ScalesPage {
     initialDataToScale:Array<number>;
     scaledData:Array<number> = [];
 
-    constructor() {}
+    isPushed:boolean = false;
+
+    constructor(public navCtrl: NavController, public navParams: NavParams) {
+        this.isPushed = this.navParams.get('isPushed') || false;
+    }
 
     ionViewDidLoad() {
 

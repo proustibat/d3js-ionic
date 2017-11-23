@@ -1,5 +1,6 @@
 <ion-header>
-    <common-header></common-header>
+    <common-header  *ngIf="!isPushed"></common-header>
+    <ion-navbar     *ngIf="isPushed"></ion-navbar>
 </ion-header>
 
 <ion-content>
@@ -66,6 +67,6 @@
     </div>
 
 
-    <footer-links color="dark" no-margin tutorialUrl="https://www.dashingd3js.com/d3js-scales"></footer-links>
+    <footer-links *ngIf="!isPushed" color="dark" no-margin tutorialUrl="https://www.dashingd3js.com/d3js-scales"></footer-links>
 
 </ion-content>

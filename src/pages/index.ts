@@ -7,6 +7,7 @@ import { ScalesPage }           from '../pages/scales/scales';
 import { GroupElementPage }     from "./group-element/group-element";
 import { GroupElementD3Page }   from "./group-element-d3/group-element-d3";
 import {TextElementPage} from "./text-element/text-element";
+import {AxesPage} from "./axes/axes";
 
 export const PagesList = [
     { component: HomePage,              title: 'Home' },
@@ -18,6 +19,7 @@ export const PagesList = [
     { component: GroupElementPage,      title: 'Group Element (SVG Part.)' },
     { component: GroupElementD3Page,    title: 'Group Element (D3 Part.)' },
     { component: TextElementPage,       title: 'SVG Text Element' },
+    { component: AxesPage,       title: 'D3.js Axes' },
 ];
 
 export const Pages = PagesList.map(page=> {
