@@ -21,8 +21,7 @@ export class DynamicSvgCoordPage {
             { 'x': 160, 'y': 40, 'height': 20, 'width':20, 'color' : 'purple' },
             { 'x': 70,  'y': 70, 'height': 20, 'width':20, 'color' : 'red' }];
 
-        // Loop through the array of JSON objects to get
-        // the max x-coordinate and the max y-coordinate
+        // Loop through the array of JSON objects to get the max x-coordinate and the max y-coordinate
         let max = this.getMaxSVG( jsonRectangles, 
             'x', 
             'y', 
@@ -30,8 +29,7 @@ export class DynamicSvgCoordPage {
             'height' );
 
         let svgContainer = d3.select( '#dynamicSvg' ).append( 'svg' )
-            // dynamically change the width and height attributes
-        // of the SVG Container/Viewport according to the data
+            // dynamically change the width and height attributes of the SVG Container/Viewport according to the data
             .attr( 'width', max.x )
             .attr( 'height', max.y )
             .style( 'border', '1px solid black' );
