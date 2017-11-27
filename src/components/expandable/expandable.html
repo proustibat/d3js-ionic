@@ -1,0 +1,14 @@
+<div #expandWrapper
+     class='expand-wrapper'
+     [class.collapsed]="!expanded"
+     [class.expanded]="expanded"
+>
+    <ng-content></ng-content>
+</div>
+<button ion-button
+        small
+        color="{{btnColor}}"
+        *ngIf="hasButton"
+        (click)="expand()">
+    {{expanded ? hideBtnTxt : showBtnTxt}}
+</button>
