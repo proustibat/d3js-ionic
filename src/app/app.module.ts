@@ -9,7 +9,6 @@ import { Pages }        from "../pages/index";
 import { Components }   from "../components/index";
 
 import { IonPrismDirective }    from "ion-prism";
-import { TruncateModule } from "ng2-truncate";
 
 @NgModule({
     declarations: [
@@ -20,7 +19,6 @@ import { TruncateModule } from "ng2-truncate";
     ],
     imports: [
         BrowserModule,
-        TruncateModule,
         IonicModule.forRoot(MyApp,{
             menuType: 'push'
         })

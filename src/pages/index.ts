@@ -6,8 +6,9 @@ import { DynamicSvgCoordPage }  from '../pages/dynamic-svg-coord/dynamic-svg-coo
 import { ScalesPage }           from '../pages/scales/scales';
 import { GroupElementPage }     from "./group-element/group-element";
 import { GroupElementD3Page }   from "./group-element-d3/group-element-d3";
-import {TextElementPage} from "./text-element/text-element";
-import {AxesPage} from "./axes/axes";
+import { TextElementPage }      from "./text-element/text-element";
+import { AxesPage }             from "./axes/axes";
+import {MenuOptionModel} from "../components/side-menu-content/models/menu-option-model";
 
 export const PagesList = [
     { component: HomePage,              title: 'Home' },
@@ -19,11 +20,49 @@ export const PagesList = [
     { component: GroupElementPage,      title: 'Group Element (SVG Part.)' },
     { component: GroupElementD3Page,    title: 'Group Element (D3 Part.)' },
     { component: TextElementPage,       title: 'SVG Text Element' },
-    { component: AxesPage,       title: 'D3.js Axes' },
+    { component: AxesPage,              title: 'D3.js Axes' },
 ];
 
-export const Pages = PagesList.map(page=> {
-   return page.component;
+export const Menu:Array<MenuOptionModel> = [{
+        displayName: 'Home',
+        iconName: 'home',
+        component: HomePage,
+        selected: true
+    }, {
+        displayName: 'Beginners',
+        subItems: [{
+            displayName: 'Basic SVG Elements',
+            component: BasicElementsPage,
+        }, {
+            displayName: 'Basic Shapes',
+            component: BasicShapesPage,
+        }, {
+            displayName: 'SVG Paths',
+            component: PathsSvgPage
+        }, {
+            displayName: 'Dynamic coordinate space',
+            component: DynamicSvgCoordPage,
+        }, {
+            displayName: 'Scales',
+            component: ScalesPage,
+        }, {
+            displayName: 'Group Element (SVG Part.)',
+            component: GroupElementPage
+        }, {
+            displayName: 'Group Element (D3 Part.)',
+            component: GroupElementD3Page,
+        }, {
+            displayName: 'SVG Text Element',
+            component: TextElementPage,
+        }, {
+            displayName: 'D3.js Axes',
+            component: AxesPage
+        }]
+    }
+];
+
+export const Pages = PagesList.map(page => {
+    return page.component;
 });
 
 export const RootPage = HomePage;

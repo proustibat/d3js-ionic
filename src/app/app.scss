@@ -30,14 +30,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  background: color($colors, dark);
+  background: color($colors, primary);
   color: color($colors, light);
   text-align: center;
   padding: $content-padding $heading-padding;
 }
 h2 {
-  border-top: 2px solid color($colors, dark);
-  border-bottom: 2px solid color($colors, dark);
+  border-top: 2px solid color($colors, primary);
+  border-bottom: 2px solid color($colors, primary);
   padding: $heading-padding $content-padding;
 }
 

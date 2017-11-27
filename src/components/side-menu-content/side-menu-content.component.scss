@@ -1,0 +1,100 @@
+// ------------------------------------ //
+// Global variables                     //
+// ------------------------------------ //
+$item-color-bg: color($colors, primary);
+$header-color-bg: color($colors, light);
+$animation-duration: 0.3s;
+
+// ------------------------------------ //
+// Hide scroll bar in the side menu     //
+// ------------------------------------ //
+ion-menu ion-content .scroll-content::-webkit-scrollbar {
+  display: none;
+}
+
+// ------------------------------------ //
+// Simple items                         //
+// ------------------------------------ //
+ion-item.item-ios,
+ion-item.item-md,
+ion-item.item-wp {
+
+  padding-left: 16px;
+  padding-right: 16px;
+  min-height: 50px;
+
+  &.active-side-menu-option {
+
+
+    //background-color: invert(color($colors, dark));
+    background-color: color($colors, dark);
+    color: color($colors, light);
+
+    &.sub-option {
+
+
+    }
+  }
+
+  &.item.item-block {
+    border-bottom: 1px solid $item-color-bg;
+    //color: color($colors, dark);
+  }
+
+  & [item-left],
+  & [item-right] {
+    margin-left: 0;
+  }
+
+  & ion-icon[item-left] + .item-inner,
+  & ion-icon[item-left] + .item-input {
+    margin-left: 8px;
+  }
+}
+
+// ------------------------------------ //
+// Multi level items                    //
+// ------------------------------------ //
+ion-list.accordion-menu {
+
+  ion-item.header {
+
+    background-color: $header-color-bg;
+    //color: color($colors, dark);
+
+    &.active-side-menu-option {
+      color: color($colors, dark);
+      font-weight: bold;
+    }
+
+    ion-icon.header-icon {
+      will-change: transform;
+      transition: transform $animation-duration ease;
+
+      &.rotate {
+        -webkit-transform: rotate(-180deg);
+        -moz-transform: rotate(-180deg);
+        -ms-transform: rotate(-180deg);
+        -o-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  div.options {
+    will-change: height;
+    transition: height $animation-duration ease;
+    overflow-y: hidden;
+    height: 0;
+  }
+
+  // Sub options without icons
+  ion-item.item.item-block.item-ios.no-icon .item-inner {
+    margin-left: 48px;
+  }
+
+  ion-item.item.item-block.item-md.no-icon .item-inner,
+  ion-item.item.item-block.item-wp.no-icon .item-inner {
+    margin-left: 40px;
+  }
+}

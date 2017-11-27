@@ -1,17 +1,13 @@
-<ion-menu [content]="content" persistent="true">
+<ion-menu persistent="true" [content]="content" (ionClose)="sideMenu.collapseAllOptions()">
     <ion-header>
-        <ion-toolbar>
+        <ion-toolbar color="white">
             <ion-title>Menu</ion-title>
         </ion-toolbar>
     </ion-header>
 
     <ion-content>
-        <ion-list>
-            <button ion-item *ngFor="let p of pages" menuClose (click)="openPage(p)">
-                {{p.title}}
-            </button>
-        </ion-list>
+        <side-menu-content [settings]="sideMenuSettings" [options]="options" (selectOption)="selectOption($event)"></side-menu-content>
     </ion-content>
-
 </ion-menu>
+
 <ion-nav [root]="rootPage" #content></ion-nav>

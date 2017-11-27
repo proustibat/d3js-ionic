@@ -1,12 +1,15 @@
 <ion-header>
     <common-header  *ngIf="!isPushed"></common-header>
-    <ion-navbar     *ngIf="isPushed"></ion-navbar>
+    <ion-navbar     *ngIf="isPushed" color="primary">
+        <ion-title text-uppercase>Scales</ion-title>
+    </ion-navbar>
+
 </ion-header>
 
 <ion-content>
 
 
-    <h1 no-margin>Scales</h1>
+    <h1 no-margin *ngIf="!isPushed">Scales</h1>
 
     <div padding-horizontal padding-bottom>
         <p padding-top>Resize the data to fit into the pre-defined SVG Coordinate Space</p>

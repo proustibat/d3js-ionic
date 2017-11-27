@@ -13,7 +13,7 @@ export class ExpandableComponent {
     @Input( 'button' )      hasButton:boolean   = true;
     @Input( 'showText' )    showBtnTxt:string   = 'Show more';
     @Input( 'hideText' )    hideBtnTxt:string   = 'Show less';
-    @Input( 'btnColor' )    btnColor:string     = 'primary';
+    @Input( 'btnColor' )    btnColor:string     = 'dark';
 
     constructor(public renderer: Renderer2) {
         console.log( 'Hello ExpandableComponent Component' );
