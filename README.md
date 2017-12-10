@@ -1,4 +1,4 @@
-# D3.js with Ionic</h1>
+# D3.js with Ionic
 
 <table>
 	<tr>
