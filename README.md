@@ -1,4 +1,4 @@
-# D3.js with Ionic
+# D3.js with Ionic [![GitHub top language](https://img.shields.io/github/languages/top/proustibat/d3js-ionic.svg)](https://github.com/proustibat/d3js-ionic)
 
 <table>
 	<tr>
