@@ -1,4 +1,5 @@
 import { HomePage }             from '../pages/home/home';
+import { InstallationPage }     from "./installation/installation";
 import { BasicElementsPage }    from '../pages/basic-elements/basic-elements';
 import { BasicShapesPage }      from '../pages/basic-shapes/basic-shapes';
 import { PathsSvgPage }         from '../pages/paths-svg/paths-svg';
@@ -8,10 +9,11 @@ import { GroupElementPage }     from "./group-element/group-element";
 import { GroupElementD3Page }   from "./group-element-d3/group-element-d3";
 import { TextElementPage }      from "./text-element/text-element";
 import { AxesPage }             from "./axes/axes";
-import {MenuOptionModel} from "../components/side-menu-content/models/menu-option-model";
+import { MenuOptionModel }      from "../components/side-menu-content/models/menu-option-model";
 
 export const PagesList = [
     { component: HomePage,              title: 'Home' },
+    { component: InstallationPage,      title: 'Installation' },
     { component: BasicElementsPage,     title: 'Basic SVG Elements' },
     { component: BasicShapesPage,       title: 'Basic Shapes' },
     { component: PathsSvgPage,          title: 'SVG Paths' },
@@ -32,6 +34,9 @@ export const Menu:Array<MenuOptionModel> = [
     }, {
         displayName: 'Beginners',
         subItems: [{
+            displayName: 'Installation',
+            component: InstallationPage,
+        }, {
             displayName: 'Basic SVG Elements',
             component: BasicElementsPage,
         }, {

@@ -1,0 +1,40 @@
+<ion-header>
+    <common-header>D3.js with Ionic</common-header>
+</ion-header>
+
+<ion-content>
+
+    <h1 no-margin margin-bottom>Installation</h1>
+
+    <h2 margin-bottom>Packages</h2>
+
+
+    <div padding-horizontal padding-bottom>
+        <p>You need to install D3 in your console as follows</p>
+
+        <textarea ion-prism="javascript">
+           npm install --save d3
+        </textarea>
+
+        <p>Install D3 TypeScript type definitions to take advantage of the autocompletion of D3</p>
+        <textarea ion-prism="javascript">
+           npm install @types/d3 --save-dev
+        </textarea>
+    </div>
+
+
+    <h2 margin-bottom>Use libraries in your code</h2>
+
+    <div padding-horizontal padding-bottom>
+        <p>Depending on which component of D3 you need, you'll import it in your typescript files as follows</p>
+        <textarea ion-prism="javascript">
+            import * as d3 from 'd3-selection';
+            import * as d3Scale from 'd3-scale';
+            import * as d3Array from 'd3-array';
+            ...
+        </textarea>
+    </div>
+
+    <footer-links color="dark" no-margin></footer-links>
+
+</ion-content>
