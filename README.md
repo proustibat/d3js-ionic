@@ -1,4 +1,6 @@
-# D3.js with Ionic [![GitHub top language](https://img.shields.io/github/languages/top/proustibat/d3js-ionic.svg)](https://github.com/proustibat/d3js-ionic)
+# D3.js with Ionic [![GitHub top language](https://img.shields.io/github/languages/top/proustibat/d3js-ionic.svg)](https://github.com/proustibat/d3js-ionic) 
+
+<a href='https://play.google.com/store/apps/details?id=prstbt.ionic.d3&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width='200'/></a>
 
 <table>
 	<tr>
@@ -15,7 +17,6 @@
     </td>
 	</tr>
 </table>
-
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
