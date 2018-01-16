@@ -1,4 +1,18 @@
-<ion-buttons ion-row no-margin no-padding justify-content-between align-items-center>
+<!-- There's a previous page so it's the home-->
+<ion-buttons text-center no-margin no-padding *ngIf="!previousPage">
+        <button *ngIf="nextPage"
+                class="home-button"
+                color="dark"
+                ion-button
+                small
+                round
+                padding-horizontal
+                (click)="openPage(nextPage)">
+            <span>Let's get started!</span>
+        </button>
+</ion-buttons>
+<!-- If there's a previous page so it's not the home-->
+<ion-buttons *ngIf="previousPage" ion-row no-margin no-padding justify-content-between align-items-center>
 
     <ion-col col-auto no-padding no-margin>
         <button *ngIf="previousPage"

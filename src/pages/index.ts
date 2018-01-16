@@ -23,7 +23,8 @@ export const PagesList = [
     { component: AxesPage,              title: 'D3.js Axes' },
 ];
 
-export const Menu:Array<MenuOptionModel> = [{
+export const Menu:Array<MenuOptionModel> = [
+    {
         displayName: 'Home',
         iconName: 'home',
         component: HomePage,

@@ -34,7 +34,7 @@ export class FooterLinksComponent {
 
             });
 
-            // TODO : ne pas chercher dans PagesList qui va etre supprimer, parcourir Menu, et voir si la page appartient a un sous menu
+            // TODO : ne pas chercher dans PagesList qui va etre supprime, parcourir Menu, et voir si la page appartient a un sous menu
             let currentViewInList = PagesList.find( item => item.component === viewCtrl.component );
             let currentIndexView = PagesList.indexOf( currentViewInList );
 
@@ -53,8 +53,6 @@ export class FooterLinksComponent {
         let redirectData: SideMenuRedirectEventData = {
             displayName: page.title
         };
-
-        console.log(page.title);
 
         // Send the event to the side menu component
         this.eventCtrl.publish( SideMenuRedirectEvent, redirectData );

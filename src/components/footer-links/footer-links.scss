@@ -7,7 +7,7 @@ footer-links {
   margin-top: $content-margin;
   background: color($colors, light);
 
-  button.button {
+  button.button:not('.home-button') {
     width: 10vw;
     height: 10vw;
   }
