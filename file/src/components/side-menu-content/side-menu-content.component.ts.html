@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">src/components/side-menu-content/side-menu-content.component.ts | D3.js Ionic</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="D3.js in a Ionic mobile application: examples"><meta property="og:type" content="website"><meta property="og:url" content="https://play.google.com/store/apps/details?id=prstbt.ionic.d3"><meta property="og:site_name" content="D3.js Ionic"><meta property="og:title" content="D3.js Ionic"><meta property="og:image" content="https://lh3.googleusercontent.com/8kGUUoRIP498DlmrqpW80jKmwhXzOpJWqBuo0vFlnvXlcVJekuE3c7Kch3avFDsa7SM=w300-rw"><meta property="og:description" content="D3.js in a Ionic mobile application: examples"><meta property="og:author" content="https://twitter.com/proustibat"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="D3.js Ionic"><meta property="twitter:description" content="D3.js in a Ionic mobile application: examples"><meta property="twitter:image" content="https://lh3.googleusercontent.com/8kGUUoRIP498DlmrqpW80jKmwhXzOpJWqBuo0vFlnvXlcVJekuE3c7Kch3avFDsa7SM=w300-rw"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./" style="display: flex; align-items: center;"><img src="./image/brand_logo.png" style="width:34px;"></a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/proustibat/d3js-ionic"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#app">app</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app/app.component.ts~MyApp.html">MyApp</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app/app.module.ts~AppModule.html">AppModule</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components">components</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/components.module.ts~ComponentsModule.html">ComponentsModule</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Components">Components</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-common-header">components/common-header</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/common-header/common-header.ts~CommonHeaderComponent.html">CommonHeaderComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-expandable">components/expandable</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/expandable/expandable.ts~ExpandableComponent.html">ExpandableComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-footer-links">components/footer-links</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/footer-links/footer-links.ts~FooterLinksComponent.html">FooterLinksComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-side-menu-content">components/side-menu-content</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/components/side-menu-content/side-menu-content.component.ts~SideMenuContentComponent.html">SideMenuContentComponent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#components-side-menu-content-models">components/side-menu-content/models</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-SideMenuRedirectEvent">SideMenuRedirectEvent</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#pages">pages</a><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Menu">Menu</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Pages">Pages</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-PagesList">PagesList</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-RootPage">RootPage</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#pages-axes">pages/axes</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/pages/axes/axes.ts~AxesPage.html">AxesPage</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#pages-basic-elements">pages/basic-elements</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/pages/basic-elements/basic-elements.ts~BasicElementsPage.html">BasicElementsPage</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#pages-basic-shapes">pages/basic-shapes</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/pages/basic-shapes/basic-shapes.ts~BasicShapesPage.html">BasicShapesPage</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#pages-dynamic-svg-coord">pages/dynamic-svg-coord</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/pages/dynamic-svg-coord/dynamic-svg-coord.ts~DynamicSvgCoordPage.html">DynamicSvgCoordPage</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#pages-group-element">pages/group-element</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/pages/group-element/group-element.ts~GroupElementPage.html">GroupElementPage</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#pages-group-element-d3">pages/group-element-d3</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/pages/group-element-d3/group-element-d3.ts~GroupElementD3Page.html">GroupElementD3Page</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#pages-home">pages/home</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/pages/home/home.ts~HomePage.html">HomePage</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#pages-installation">pages/installation</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/pages/installation/installation.ts~InstallationPage.html">InstallationPage</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#pages-paths-svg">pages/paths-svg</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/pages/paths-svg/paths-svg.ts~PathsSvgPage.html">PathsSvgPage</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#pages-scales">pages/scales</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/pages/scales/scales.ts~ScalesPage.html">ScalesPage</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#pages-text-element">pages/text-element</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/pages/text-element/text-element.ts~TextElementPage.html">TextElementPage</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/components/side-menu-content/side-menu-content.component.ts</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">// Angular
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ChangeDetectorRef } from &apos;@angular/core&apos;; // tslint:disable-line
+
+// Ionic
+import { Platform, Events } from &apos;ionic-angular&apos;;
+
+// Models
+import { SideMenuSettings } from &apos;./models/side-menu-settings&apos;;
+import { MenuOptionModel } from &apos;./models/menu-option-model&apos;;
+import { SideMenuRedirectEvent, SideMenuRedirectEventData } from &apos;./models/side-menu-redirect-events&apos;;
+
+class InnerMenuOptionModel {
+
+    id: number;
+    iconName: string;
+    displayName: string;
+
+    targetOption: MenuOptionModel;
+
+    parent: InnerMenuOptionModel;
+
+    selected: boolean;
+
+    expanded: boolean;
+    subItemsCount: number;
+    subOptions: Array&lt;InnerMenuOptionModel&gt;;
+
+    private static counter = 1;
+    public static fromMenuOptionModel(option: MenuOptionModel, parent?: InnerMenuOptionModel): InnerMenuOptionModel {
+
+        let innerMenuOptionModel = new InnerMenuOptionModel();
+
+        innerMenuOptionModel.id = this.counter++;
+        innerMenuOptionModel.iconName = option.iconName;
+        innerMenuOptionModel.displayName = option.displayName;
+        innerMenuOptionModel.targetOption = option;
+        innerMenuOptionModel.parent = parent || null;
+
+        innerMenuOptionModel.selected = option.selected;
+
+        if (option.subItems) {
+            innerMenuOptionModel.expanded = false;
+            innerMenuOptionModel.subItemsCount = option.subItems.length;
+            innerMenuOptionModel.subOptions = [];
+
+            option.subItems.forEach(subItem =&gt; {
+
+                let innerSubItem = InnerMenuOptionModel.fromMenuOptionModel(subItem, innerMenuOptionModel);
+                innerMenuOptionModel.subOptions.push(innerSubItem);
+
+                // Select the parent if any
+                // child option is selected
+                if (subItem.selected) {
+                    innerSubItem.parent.selected = true;
+                    innerSubItem.parent.expanded = true;
+                }
+
+            });
+        }
+
+        return innerMenuOptionModel;
+    }
+}
+
+@Component({
+    selector: &apos;side-menu-content&apos;,
+    templateUrl: &apos;side-menu-content.component.html&apos;,
+    changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class SideMenuContentComponent {
+
+    // Main inputs
+    public menuSettings: SideMenuSettings;
+    public menuOptions: Array&lt;MenuOptionModel&gt;;
+
+    // Private properties
+    private selectedOption: InnerMenuOptionModel;
+
+    public collapsableItems: Array&lt;InnerMenuOptionModel&gt; = [];
+
+    @Input(&apos;options&apos;)
+    set options(value: Array&lt;MenuOptionModel&gt;) {
+        if (value) {
+            // Keep a reference to the options
+            // sent to this component
+            this.menuOptions = value;
+            this.collapsableItems = new Array&lt;InnerMenuOptionModel&gt;();
+
+            // Map the options to our internal models
+            this.menuOptions.forEach(option =&gt; {
+
+
+
+                let innerMenuOption = InnerMenuOptionModel.fromMenuOptionModel(option);
+                this.collapsableItems.push(innerMenuOption);
+
+                // Check if there&apos;s any option marked as selected
+                if (option.selected) {
+                    this.selectedOption = innerMenuOption;
+                } else if (innerMenuOption.subItemsCount) {
+                    innerMenuOption.subOptions.forEach(subItem =&gt; {
+                        if (subItem.selected) {
+                            this.selectedOption = subItem;
+                        }
+                    });
+                }
+            });
+        }
+    }
+
+    @Input(&apos;settings&apos;)
+    set settings(value: SideMenuSettings) {
+        if (value) {
+            this.menuSettings = value;
+            this.mergeSettings();
+        }
+    }
+
+    // Outputs: return the selected option to the caller
+    @Output() selectOption = new EventEmitter&lt;any&gt;();
+
+    constructor(private platform: Platform,
+                private eventsCtrl: Events,
+                private cdRef: ChangeDetectorRef) {
+
+        // Handle the redirect event
+        this.eventsCtrl.subscribe(SideMenuRedirectEvent, (data: SideMenuRedirectEventData) =&gt; {
+            this.updateSelectedOption(data);
+        });
+    }
+
+    ngOnDestroy() {
+        this.eventsCtrl.unsubscribe(SideMenuRedirectEvent);
+    }
+
+    // ---------------------------------------------------
+    // PUBLIC methods
+    // ---------------------------------------------------
+
+    // Send the selected option to the caller component
+    public select(option: InnerMenuOptionModel): void {
+        if (this.menuSettings.showSelectedOption) {
+            this.setSelectedOption(option);
+        }
+
+        // Return the selected option (not our inner option)
+        this.selectOption.emit(option.targetOption);
+    }
+
+    // Toggle the sub options of the selected item
+    public toggleItemOptions(targetOption: InnerMenuOptionModel): void {
+
+        if(!targetOption) return;
+
+        // If the accordion mode is set to true, we need
+        // to collapse all the other menu options
+        if (this.menuSettings.accordionMode) {
+            this.collapsableItems.forEach(option =&gt; {
+                if (option.id !== targetOption.id) {
+                    option.expanded = false;
+                }
+            });
+        }
+
+        // Toggle the selected option
+        targetOption.expanded = !targetOption.expanded;
+    }
+
+    // Reset the entire menu
+    public collapseAllOptions(): void {
+        this.collapsableItems.forEach(option =&gt; {
+            if (!option.selected) {
+                option.expanded = false;
+            }
+
+            if (option.subItemsCount) {
+                option.subOptions.forEach(subItem =&gt; {
+                    if (subItem.selected) {
+                        // Expand the parent if any of
+                        // its childs is selected
+                        subItem.parent.expanded = true;
+                    }
+                });
+            }
+        });
+
+        // Update the view since there wasn&apos;t
+        // any user interaction with it
+        this.cdRef.detectChanges();
+    }
+
+    // Get the proper indentation of each option
+    public get subOptionIndentation(): string {
+        if (this.platform.is(&apos;ios&apos;)) return this.menuSettings.subOptionIndentation.ios;
+        if (this.platform.is(&apos;windows&apos;)) return this.menuSettings.subOptionIndentation.wp;
+        return this.menuSettings.subOptionIndentation.md;
+    }
+
+    // Get the proper height of each option
+    public get itemHeight(): number {
+        if (this.platform.is(&apos;ios&apos;)) return this.menuSettings.itemHeight.ios;
+        if (this.platform.is(&apos;windows&apos;)) return this.menuSettings.itemHeight.wp;
+        return this.menuSettings.itemHeight.md;
+    }
+
+    // ---------------------------------------------------
+    // PRIVATE methods
+    // ---------------------------------------------------
+
+    // Method that set the selected option and its parent
+    private setSelectedOption(option: InnerMenuOptionModel) {
+        if (!option.targetOption.component) return;
+
+        // Clean the current selected option if any
+        if (this.selectedOption) {
+            this.selectedOption.selected = false;
+            this.selectedOption.targetOption.selected = false;
+
+            if (this.selectedOption.parent) {
+                this.selectedOption.parent.selected = false;
+                this.selectedOption.parent.expanded = false;
+            }
+
+            this.selectedOption = null;
+        }
+
+        // Set this option to be the selected
+        option.selected = true;
+        option.targetOption.selected = true;
+
+        if (option.parent) {
+            option.parent.selected = true;
+            option.parent.expanded = true;
+        }
+
+        // Keep a reference to the selected option
+        this.selectedOption = option;
+
+        // Update the view if needed since we may have
+        // expanded or collapsed some options
+        this.cdRef.detectChanges();
+    }
+
+    // Update the selected option
+    private updateSelectedOption(data: SideMenuRedirectEventData): void {
+
+        if (!data.displayName) {
+            return;
+        }
+
+        let targetOption;
+
+        this.collapsableItems.forEach(option =&gt; {
+            if (option.displayName.toLowerCase() === data.displayName.toLowerCase()) {
+                targetOption = option;
+            } else if (option.subItemsCount) {
+                option.subOptions.forEach(subOption =&gt; {
+                    if (subOption.displayName.toLowerCase() === data.displayName.toLowerCase()) {
+                        targetOption = subOption;
+                    }
+                });
+            }
+        });
+
+        if (targetOption) {
+            this.setSelectedOption(targetOption);
+        }
+    }
+
+    // Merge the settings received with the default settings
+    private mergeSettings(): void {
+        const defaultSettings: SideMenuSettings = {
+            accordionMode: false,
+            itemHeight: {
+                ios: 50,
+                md: 50,
+                wp: 50
+            },
+            arrowIcon: &apos;ios-arrow-down&apos;,
+            showSelectedOption: false,
+            selectedOptionClass: &apos;selected-option&apos;,
+            indentSubOptionsWithoutIcons: false,
+            subOptionIndentation: {
+                ios: &apos;16px&apos;,
+                md: &apos;16px&apos;,
+                wp: &apos;16px&apos;
+            }
+        }
+
+        if (!this.menuSettings) {
+            // Use the default values
+            this.menuSettings = defaultSettings;
+            return;
+        }
+
+        if (!this.menuSettings.itemHeight) {
+            this.menuSettings.itemHeight = defaultSettings.itemHeight;
+        } else {
+            this.menuSettings.itemHeight.ios = this.isDefinedAndPositive(this.menuSettings.itemHeight.ios) ? this.menuSettings.itemHeight.ios : defaultSettings.itemHeight.ios;
+            this.menuSettings.itemHeight.md = this.isDefinedAndPositive(this.menuSettings.itemHeight.md) ? this.menuSettings.itemHeight.md : defaultSettings.itemHeight.md;
+            this.menuSettings.itemHeight.wp = this.isDefinedAndPositive(this.menuSettings.itemHeight.wp) ? this.menuSettings.itemHeight.wp : defaultSettings.itemHeight.wp;
+        }
+
+        this.menuSettings.showSelectedOption = this.isDefined(this.menuSettings.showSelectedOption) ? this.menuSettings.showSelectedOption : defaultSettings.showSelectedOption;
+        this.menuSettings.accordionMode = this.isDefined(this.menuSettings.accordionMode) ? this.menuSettings.accordionMode : defaultSettings.accordionMode;
+        this.menuSettings.arrowIcon = this.isDefined(this.menuSettings.arrowIcon) ? this.menuSettings.arrowIcon : defaultSettings.arrowIcon;
+        this.menuSettings.selectedOptionClass = this.isDefined(this.menuSettings.selectedOptionClass) ? this.menuSettings.selectedOptionClass : defaultSettings.selectedOptionClass;
+        this.menuSettings.subOptionIndentation = this.isDefined(this.menuSettings.subOptionIndentation) ? this.menuSettings.subOptionIndentation : defaultSettings.subOptionIndentation;
+
+        this.menuSettings.indentSubOptionsWithoutIcons = this.isDefined(this.menuSettings.indentSubOptionsWithoutIcons) ? this.menuSettings.indentSubOptionsWithoutIcons : defaultSettings.indentSubOptionsWithoutIcons;
+
+
+        if (!this.menuSettings.subOptionIndentation) {
+            this.menuSettings.subOptionIndentation = defaultSettings.subOptionIndentation;
+        } else {
+            this.menuSettings.subOptionIndentation.ios = this.isDefined(this.menuSettings.subOptionIndentation.ios) ? this.menuSettings.subOptionIndentation.ios : defaultSettings.subOptionIndentation.ios;
+            this.menuSettings.subOptionIndentation.md = this.isDefined(this.menuSettings.subOptionIndentation.md) ? this.menuSettings.subOptionIndentation.md : defaultSettings.subOptionIndentation.md;
+            this.menuSettings.subOptionIndentation.wp = this.isDefined(this.menuSettings.subOptionIndentation.wp) ? this.menuSettings.subOptionIndentation.wp : defaultSettings.subOptionIndentation.wp;
+        }
+    }
+
+    private isDefined(property: any): boolean {
+        return property !== null &amp;&amp; property !== undefined;
+    }
+
+    private isDefinedAndPositive(property: any): boolean {
+        return this.isDefined(property) &amp;&amp; !isNaN(property) &amp;&amp; property &gt; 0;
+    }
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.4)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
