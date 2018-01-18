@@ -10,7 +10,7 @@
         "lint": "ionic-app-scripts lint",
         "ionic:build": "ionic-app-scripts build",
         "ionic:serve": "ionic-app-scripts serve",
-        "typedoc": "./node_modules/.bin/typedoc src --out documentation --theme minimal --name 'D3.js Ionic' --hideGenerator --readme README.MD"
+        "typedoc": "./node_modules/.bin/typedoc src --exclude '**/*+(e2e|spec|index).ts'"
     },
     "dependencies": {
         "@angular/common": "^5.2.0",
