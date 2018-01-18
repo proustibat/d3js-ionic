@@ -35,28 +35,29 @@ I think these examples could also be appropriated if you already are in and adva
 
 Most of these examples are based on [Dashing D3.js tutorials](https://www.dashingd3js.com/table-of-contents) adapted in Typescript 2 for Ionic 3. 
 
+---------------
 
-### Context
+## Working with this code
 
+### Prerequisites
+Of course you need node and npm.
 
-#### Ionic
-
-- [documentation](https://ionicframework.com/docs/)
-
-#### D3.js
-
-- [Learn more about D3.js here](https://d3js.org/)
+Please also be sure you installed [Ionic](https://ionicframework.com/docs/) and [Cordova](https://cordova.apache.org/):
+```bash
+npm install -g ionic cordova
+```
+To verify your system is ok run `ionic info`.
 
 
 ## Installation
 
 Install the app by running:
 ```bash
-// be sure cordova and ionic are installed
-npm install -g ionic cordova
-// this should prompt you if you want install npm packages, answer `yes`
+git clone git@github.com:proustibat/d3js-ionic.git
+cd d3js-ionic
 ionic cordova prepare
 ```
+This should prompt you if you want install npm packages, answer `yes`. If it's not the case, run `npm install`;
 
 Run the app: 
 ```bash
