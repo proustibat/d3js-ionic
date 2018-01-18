@@ -49,7 +49,7 @@ npm install -g ionic cordova
 To verify your system is ok run `ionic info`.
 
 
-## Installation
+### Installation
 
 Install the app by running:
 ```bash
@@ -68,14 +68,14 @@ ionic cordova run android --device
 ionic cordova run ios --device
 ```
 
-## Feel free to improve the app
+### Feel free to improve the app
 
 - Please use [commitizen](https://github.com/commitizen/cz-cli) if you wanna contribute to the project and create a pull request ( run `git cz` instead of `git commit`)
 - Quality code status is available on [Sonarcloud](https://about.sonarcloud.io/)
 - CI with [Travis](https://travis-ci.org/proustibat/d3js-ionic)
 
 
-## Contribute
+### Contribute
 
 - Issue Tracker: [https://github.com/proustibat/d3js-ionic/issues](https://github.com/proustibat/d3js-ionic/issues)
 - Source Code: [https://github.com/proustibat/d3js-ionic](https://github.com/proustibat/d3js-ionic)
