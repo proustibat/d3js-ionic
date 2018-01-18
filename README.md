@@ -75,7 +75,7 @@ ionic cordova run ios --device
 - CI with [Travis](https://travis-ci.org/proustibat/d3js-ionic)
 
 
-### Contribute
+## Contribute
 
 - Issue Tracker: [https://github.com/proustibat/d3js-ionic/issues](https://github.com/proustibat/d3js-ionic/issues)
 - Source Code: [https://github.com/proustibat/d3js-ionic](https://github.com/proustibat/d3js-ionic)
