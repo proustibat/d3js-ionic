@@ -1,14 +1,18 @@
 env:
   global:
-  - GITHUB_REPO: proustibat/statsify
+  - GITHUB_REPO: proustibat/d3js-ionic
 language: node_js
 node_js: '8'
 cache: npm
-#addons:
-#  sonarcloud:
-#    organization: proustibat-github
-#    token:
-#      secure: "KJ96NZNY92Md/soJtxyuJKJZ3oEbYuvhTyxFkDkjpbjysQE7nFtnpCIp8Q0zdOqLV0mi8eH6NfyP8lzyo6TW/GyyCuSzn1AlDPYlu9a6DZj8QoVsvw/R8jJhm++pndji4mU4dqk1ip3kiCiXozTsFMqmarbVXIbCfRsWbW9j4Hi39yBVsOh7IBPwvXOXAOj5B1DsY/e0PW19jM37KbNQfFPfmoqW1TX6S8V4Zetg54FgHcn7n1xybC4zED6BaCBazrOd5jMWaYckHIp+10Xl4+Ff8ffX7JSQFNEcSKS021h/VuaJF3apI50C+FHKHsQwvUJfhnjFcdelYbV0OH0797cxtZOwyGveYPAt5nInnVrbfPU7UPb1E+6LNCYX7CtfPt9sZbRzJ2ebMxYv8npwCgQSS1h4WbmA44KCOpju54pOEhFFdnsS6oBzVaG6PpOZmENa8osDFyoT+Ag5NTanttnO0qB0oMpS+lDsMKM/V3ZUlcyvgIVHO1NrNcY4nMwKxYVkNu0sCnjV82oPrIpZ83AYdeKJZgbbyiPz9iaUVeJOHpEXjbiP6sAFI0BSx9RevZXqCKkOPFz6i+EM64tDyZAkIVskKn+pejpYV1CoxIeWL1BXkq/NTJeo1ajeiwfRv/2YznKv1oL7/egvvW9WibqLnBVvP/YXJgmjRnjjig8="
+
+# create a user token here: https://sonarcloud.io/account/security
+# run `travis encrypt your-token-here`
+# paste secure token below
+addons:
+  sonarcloud:
+    organization: proustibat-github
+    token:
+      secure: "K8aOT5z1xZ26HTsoh3nQaY5Q6TQIDKP+vZViTaCkpXfOMHQcRh38HMEzcw06/EZZ6wKWlDqiGF0erCr6mafKTcbEatBVkcfhoUUAd7OJVfUoNDrzDDqpnCbywxQEg6qKWIlhIHDjEih5trA/Am5AIXt/s8Md/7GlYAoDcuNHTg/vaFMLXXIjfqAvkULigXk25V76z2PGouRUZOwmh4Gh6OXmuEEcc9t2cMm9VlquMmKKzypHWs++PXMk0+0gMrvL4LZNqRt3uBAQl25yNsxRZvzQjboa1NIOGhnUyMKpTKTXm4xygzK0uqabKpcoveuD5RVwlgkFtov6WpONyYZcsGf3AL/UYjbRbCgT8GHTpa2T92Dw6Ps9kcZlcu585uAOanarfjBweLKeT5mRma2k9BD8i2WesbBOfYXMToyV+CgkBtQKdUKCw4qV7Tm2LXuFsBl21BM+qtzienuiDiq455eqsgCnQJ0dwp3mCwpU+H19Vh5aGZvz7sm8AjtE+gbcFG+hYVkmkOFTQS5n/r8nEr0l+IrQGDuKjMiTvjQsMulM8adZfq7f+q5QHvVm6JzAQFGIi4JkK4e7zSqkXDVKJHPVjW4qdKUHn4SCeY5DG8fpFxS4PVbDz/GH/6j7SGuJPRURTLDoJ2PywOsDexyM1OVSzOoPQPdxqB6AyaG8fxQ="
 
 before_install:
 - npm install -g ionic@3.19.0 cordova@8.0.0
@@ -19,4 +23,4 @@ install:
 
 script:
 - ionic cordova build android
-#- bash sonar.sh
+- bash sonar.sh
