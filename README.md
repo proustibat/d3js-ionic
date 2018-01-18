@@ -57,7 +57,7 @@ git clone git@github.com:proustibat/d3js-ionic.git
 cd d3js-ionic
 ionic cordova prepare
 ```
-This should prompt you if you want install npm packages, answer `yes`. If it's not the case, run `npm install`;
+This should prompt you if you want to install npm packages, answer `yes`. If it's not the case, run `npm install`;
 
 Run the app: 
 ```bash
