@@ -68,6 +68,10 @@ ionic cordova run android --device
 ionic cordova run ios --device
 ```
 
+
+### Documentation
+[Code documentation is available here](https://proustibat.github.io/d3js-ionic/)
+
 ### Feel free to improve the app
 
 - Please use [commitizen](https://github.com/commitizen/cz-cli) if you wanna contribute to the project and create a pull request ( run `git cz` instead of `git commit`)
