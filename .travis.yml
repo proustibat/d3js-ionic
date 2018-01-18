@@ -24,3 +24,6 @@ install:
 script:
 - ionic cordova build android
 - bash sonar.sh
+
+after_script:
+- npm run esdoc
