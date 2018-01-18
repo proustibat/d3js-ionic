@@ -28,12 +28,12 @@ install:
 script:
 - ionic cordova build android
 - bash sonar.sh
-
-after_success:
 - npm run esdoc
+
 # Here we want to check out where we are.
 # We only want to update Github Pages if we're building
 # the master branch of the original repository, so we
 # have to check $TRAVIS_PULL_REQUEST and $TRAVIS_BRANCH.
 # If we are here, we run bash deploy.sh
+after_success:
  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy.sh

@@ -1,13 +1,11 @@
 #!/bin/bash
 
 # THANKS https://github.com/steveklabnik/automatically_update_github_pages_with_travis_example
-
-
-### CREATE orphan branch gh-pages
-#   git checkout --orphan gh-pages
-#   rm -rf *.md *.json *xml *.sh *.properties src config resources *.yml *.travis.yml .gitignore .editorconfig
-#   git add . && git commit -am "Initial Commit" && git push origin -u gh-pages
-#   git checkout master
+#    CREATE orphan branch gh-pages
+#    git checkout --orphan gh-pages
+#    rm -rf *.md *.json *xml *.sh *.properties src config resources *.yml *.travis.yml .gitignore .editorconfig
+#    git add . && git commit -am "Initial Commit" && git push origin -u gh-pages
+#    git checkout master
 
 echo -e "#####################################################"
 echo -e " START DEPLOYING"
