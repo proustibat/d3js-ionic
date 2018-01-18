@@ -1,6 +1,10 @@
 env:
   global:
   - GITHUB_REPO: proustibat/d3js-ionic
+  # generate token at https://github.com/settings/tokens/new
+  # generate secure with travis encrypt -r username/repository GH_TOKEN=[the token you created before]
+  - secure: "E88hDHzpU7/DcNJeQo2psKxTJxZ4o0DPBcz3DQgjAfrwtzvv85XTQMkl9YgEzVsLkD/lX/KSaoiNV2//pZN8aLfOsbNHrmW5Iihqn4B4IrTxYzmNvNmset01HEUmzuCblSVvqD3RSxkVh2Tq48zfbOaGW0bECPmtaskoxBW4vypBIVH/Nck6YSEe0KAuDvWOmuO6S80RsZ5kIywZizNU1QwXQqyLxUgM4HsC4JDNA6d+F0v/rRfviWUaccBbcyQmjpH5oJ4arJ1WKsCGx0C3yUc0tHfI3jkpxXlD3LpW82EHYrv0YTuEvKnIVPX9xc/dQtlq8V89AUPwIlgG8Y8IpayNHyPGf25FSQnteTSQk8q6nYU0Fm3MiRshryBeiGs3+SoNGqpTpqz0wsBjSgUqjaEY76hLsFsxnOVeFk2eVf6SWBpI+mNUXDA97+ajKN0eqzJeSqioNyQs9PZRPl3rrktMxs/hSyeju50K9s1bR90D3cDy3RVepQ6Qsa5Lzt+KX+I1ypD1w60MDSgwFIISkDHqJ2mhnriqXLspk5yNe/OrxMo1grgLkqbjTX17GxtGzKCjRyO3CYWODdaGjcugr6wVZrj4UCtLxEGJtN6MXblV8zbjf0B7K6fzwfuu+9FsBnmaLcm06Tp4alUCYOs+mA2+VSTJO5mVA5jDsSLe+8I="
+
 language: node_js
 node_js: '8'
 cache: npm
@@ -25,5 +29,11 @@ script:
 - ionic cordova build android
 - bash sonar.sh
 
-after_script:
+after_success:
 - npm run esdoc
+# Here we want to check out where we are.
+# We only want to update Github Pages if we're building
+# the master branch of the original repository, so we
+# have to check $TRAVIS_PULL_REQUEST and $TRAVIS_BRANCH.
+# If we are here, we run bash deploy.sh
+ - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && bash deploy.sh
