@@ -24,7 +24,7 @@ export class BasicElementsPage {
         let circleRadii = [ 40, 20, 10 ];
 
         // an SVG element to hold the SVG Circles
-        let svgContainer = d3.select( '#circles' ).append( 'svg' )
+        let svgContainer = d3.select( '#circles-basic' ).append( 'svg' )
             .attr( 'width', 300 )
             .attr( 'height', 100 )
             .style( 'border', '1px solid black' );
