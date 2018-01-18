@@ -12,6 +12,7 @@ import { SideMenuContentComponent } from "../components/side-menu-content/side-m
 @Component({
     templateUrl: 'app.html'
 })
+
 export class MyApp {
 
     rootPage:any = RootPage;
@@ -73,9 +74,6 @@ export class MyApp {
     // public collapseMenuOptions(): void {
     //     this.sideMenu.collapseAllOptions();
     // }
-
-
-
 
     // openPage(page) {
     //     // page.component !== this.nav.getActive().component ? this.nav.push(page.component) : console.log('already here');

@@ -10,7 +10,7 @@
         "lint": "ionic-app-scripts lint",
         "ionic:build": "ionic-app-scripts build",
         "ionic:serve": "ionic-app-scripts serve",
-        "esdoc": "./node_modules/.bin/esdoc -c ./esdoc.json"
+        "typedoc": "./node_modules/.bin/typedoc src --out documentation --theme minimal --name 'D3.js Ionic' --hideGenerator --readme README.MD"
     },
     "dependencies": {
         "@angular/common": "^5.2.0",
@@ -43,13 +43,7 @@
     "devDependencies": {
         "@ionic/app-scripts": "^3.1.7",
         "@types/d3": "^4.12.0",
-        "esdoc": "^1.0.4",
-        "esdoc-brand-plugin": "^1.0.0",
-        "esdoc-lint-plugin": "^1.0.1",
-        "esdoc-publish-html-plugin": "^1.1.0",
-        "esdoc-typescript-plugin": "^1.0.0",
-        "esdoc-undocumented-identifier-plugin": "^1.0.0",
-        "esdoc-unexported-identifier-plugin": "^1.0.0",
+        "typedoc": "^0.9.0",
         "typescript": "^2.6.2"
     },
     "description": "D3.js in a Ionic mobile application: examples",

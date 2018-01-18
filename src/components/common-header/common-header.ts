@@ -13,6 +13,7 @@ export class CommonHeaderComponent {
     constructor(private renderer:Renderer2) {
 
     }
+
     ngAfterViewInit() {
         let titleEl = this.refIonTitle.getElementRef().nativeElement.querySelector('.toolbar-title');
         if( titleEl.childNodes.length === 0 ) {

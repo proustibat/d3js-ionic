@@ -30,7 +30,7 @@ install:
 script:
 - ionic cordova build android
 - bash sonar.sh
-- npm run esdoc
+- npm run typedoc
 
 # Here we want to check out where we are.
 # We only want to update Github Pages if we're building
