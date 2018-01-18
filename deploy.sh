@@ -64,6 +64,10 @@ git reset upstream/gh-pages
 # We then touch everything, so that git considers all of our local copies fresh.
 touch .
 
+# Turn off Jekyll (useful for files that start with an underscore)
+# https://help.github.com/articles/files-that-start-with-an-underscore-are-missing/
+touch .nojekyll
+
 git status
 # We then add all changes, commit them, using our rev from earlier, and then push to upstream.
 git add -A .
