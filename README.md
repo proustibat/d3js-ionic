@@ -1,56 +1,19 @@
 # D3.js with Ionic [![GitHub top language](https://img.shields.io/github/languages/top/proustibat/d3js-ionic.svg)](https://github.com/proustibat/d3js-ionic) 
+A tutorial app built with [Ionic Framework](https://ionicframework.com/) to learn [D3.js](https://d3js.org/) with Typescript
 
-<a href='https://play.google.com/store/apps/details?id=prstbt.ionic.d3&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width='200'/></a>
-
-<table>
-	<tr>
-		<td>
-			<a href='https://sonarcloud.io/dashboard?id=prstbt.ionic.d3.app'><img src='https://sonarcloud.io/api/badges/gate?key=prstbt.ionic.d3.app' alt='Sonar quality gate'/></a><br/>
-			<a href='https://sonarcloud.io/component_measures?id=prstbt.ionic.d3.app&metric=alert_status'><img src='https://sonarcloud.io/api/badges/measure?key=prstbt.ionic.d3.app&metric=alert_status' alt='Quality Gate Status'/></a>
-		</td>
-		<td>
-			<a href='https://david-dm.org/proustibat/d3js-ionic'><img src='https://david-dm.org/proustibat/d3js-ionic/status.svg' alt='dependencies Status'/></a><br/>
-			<a href='https://david-dm.org/proustibat/d3js-ionic?type=dev'><img src='https://david-dm.org/proustibat/d3js-ionic/dev-status.svg' alt='devDependencies Status'/></a><br/>
-		</td>
-    <td>
-      <a href='https://github.com/proustibat/d3js-ionic/blob/master/LICENSE.md'><img src='https://img.shields.io/github/license/proustibat/d3js-ionic.svg' alt='GitHub license'/></a><br/><br/>
-    </td>
-	</tr>
-</table>
-
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**
-
-- [Presentation](#presentation)
-  - [Why this app?](#why-this-app)
-  - [Who is this for?](#who-is-this-for)
-  - [What can you find here?](#what-can-you-find-here)
-  - [Context](#context)
-    - [What is Ionic](#what-is-ionic)
-    - [What is D3.js](#what-is-d3js)
-  - [Still don't understand anything?](#still-dont-understand-anything)
-- [Installation](#installation)
-- [Feel free to improve the app with us](#feel-free-to-improve-the-app-with-us)
-- [Contribute](#contribute)
-- [Support](#support)
-- [License](#license)
-- [Dev stats](#dev-stats)
-  - [Complexity](#complexity)
-  - [Documentation & sizes](#documentation--sizes)
-  - [Duplications](#duplications)
-  - [Issues](#issues)
-  - [Maintainability](#maintainability)
-  - [Technical debt](#technical-debt)
-  - [Reliability](#reliability)
-  - [Security](#security)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
+[![Travis Build Status](https://travis-ci.org/proustibat/d3js-ionic.svg?branch=master)](https://travis-ci.org/proustibat/d3js-ionic)
+[![Sonar quality gate](https://sonarcloud.io/api/badges/gate?key=prstbt.ionic.d3.app)](https://sonarcloud.io/dashboard?id=prstbt.ionic.d3.app)
+[![Dependencies Status](https://david-dm.org/proustibat/d3js-ionic/status.svg)](https://david-dm.org/proustibat/d3js-ionic)
+[![Dev Dependencies Status](https://david-dm.org/proustibat/d3js-ionic/dev-status.svg)](https://david-dm.org/proustibat/d3js-ionic?type=dev)
+[![License](https://img.shields.io/github/license/proustibat/d3js-ionic.svg)](https://github.com/proustibat/d3js-ionic/blob/master/LICENSE.md)
 
 ----------------
 
+| [![d3js-ionic-icon](https://user-images.githubusercontent.com/1054387/35104149-46b23f56-fc68-11e7-8a50-357fa36d0d32.png)<br/> ![google-play-icon](https://user-images.githubusercontent.com/1054387/35104116-2c9addda-fc68-11e7-85fa-91b13423d5f4.png)](https://play.google.com/store/apps/details?id=prstbt.ionic.d3&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1) |
+| ------------- |
+| ![screenshot-1](https://user-images.githubusercontent.com/1054387/35104066-08acd856-fc68-11e7-821f-3ee8fbcf3b44.png) ![screenshot-2](https://user-images.githubusercontent.com/1054387/35104068-09de7626-fc68-11e7-9130-e0c22c07c980.png) |
 
+---------------
 
 ## Presentation
 
@@ -76,50 +39,39 @@ Most of these examples are based on [Dashing D3.js tutorials](https://www.dashin
 ### Context
 
 
-#### What is Ionic
+#### Ionic
 
-I suppose if you're here you know what Ionic is, probably your favorite framework for building amazing mobile apps :-)
+- [documentation](https://ionicframework.com/docs/)
 
-This is not exactly our subject here but if you are an Ionic developer I suggest you to make the [documentation](https://ionicframework.com/docs/) your bible.
+#### D3.js
 
-#### What is D3.js
-
-D3 (or D3.js) is a JavaScript library for visualizing data using web standards. D3 helps you bring data to life using SVG, Canvas and HTML.
-
-[Learn more about D3.js here](https://d3js.org/). Consider it as a complementary of your bible if you wanna learn data visualization.
-
-### Still don't understand anything?
-
-I suggest you to be more familiar with the context. 
-
-Otherwise you're maybe not a developer and I'm sorry you're here :-)
+- [Learn more about D3.js here](https://d3js.org/)
 
 
 ## Installation
 
 Install the app by running:
-```
+```bash
+// be sure cordova and ionic are installed
 npm install -g ionic cordova
-npm i
+// this should prompt you if you want install npm packages, answer `yes`
 ionic cordova prepare
 ```
 
 Run the app: 
-```
+```bash
+// in the browser with livereload
 ionic serve -l
-```
-or on a device: 
-```
+// or on a device
 ionic cordova run android --device
-```
-
-```
 ionic cordova run ios --device
 ```
 
 ## Feel free to improve the app
 
-- I use [commitizen](https://github.com/commitizen/cz-cli), so if you wanna contribute to the project and create a pull request, please use it by running `git cz` instead of `git commit`.
+- Please use [commitizen](https://github.com/commitizen/cz-cli) if you wanna contribute to the project and create a pull request ( run `git cz` instead of `git commit`)
+- Quality code status is available on [Sonarcloud](https://about.sonarcloud.io/)
+- CI with [Travis](https://travis-ci.org/proustibat/d3js-ionic)
 
 
 ## Contribute
@@ -129,7 +81,7 @@ ionic cordova run ios --device
 
 ## Support
 
-If you are having issues, please let me know: proustibat@gmail.com
+If you are having issues, questions or any suggestions, please let me know: proustibat@gmail.com / [twitter/@proustibat](https://twitter.com/proustibat)
 
 ## License
 
