@@ -1,13 +1,14 @@
 # D3.js with Ionic [![GitHub top language](https://img.shields.io/github/languages/top/proustibat/d3js-ionic.svg)](https://github.com/proustibat/d3js-ionic) 
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/proustibat/d3js-ionic.svg)](https://greenkeeper.io/)
 A tutorial app built with [Ionic Framework](https://ionicframework.com/) to learn [D3.js](https://d3js.org/) with Typescript
 
 [![Travis Build Status](https://travis-ci.org/proustibat/d3js-ionic.svg?branch=master)](https://travis-ci.org/proustibat/d3js-ionic)
 [![Sonar quality gate](https://sonarcloud.io/api/badges/gate?key=prstbt.ionic.d3.app)](https://sonarcloud.io/dashboard?id=prstbt.ionic.d3.app)
+[![License](https://img.shields.io/github/license/proustibat/d3js-ionic.svg)](https://github.com/proustibat/d3js-ionic/blob/master/LICENSE.md)
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/proustibat/d3js-ionic.svg)](https://greenkeeper.io/)
 [![Dependencies Status](https://david-dm.org/proustibat/d3js-ionic/status.svg)](https://david-dm.org/proustibat/d3js-ionic)
 [![Dev Dependencies Status](https://david-dm.org/proustibat/d3js-ionic/dev-status.svg)](https://david-dm.org/proustibat/d3js-ionic?type=dev)
-[![License](https://img.shields.io/github/license/proustibat/d3js-ionic.svg)](https://github.com/proustibat/d3js-ionic/blob/master/LICENSE.md)
 
 ----------------
 
