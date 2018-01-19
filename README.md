@@ -1,23 +1,19 @@
-# D3.js with Ionic [![GitHub top language](https://img.shields.io/github/languages/top/proustibat/d3js-ionic.svg)](https://github.com/proustibat/d3js-ionic) 
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/proustibat/d3js-ionic.svg)](https://greenkeeper.io/)
-
+# D3.js with Ionic 
 A tutorial app built with [Ionic Framework](https://ionicframework.com/) to learn [D3.js](https://d3js.org/) with Typescript
 
-[![Travis Build Status](https://travis-ci.org/proustibat/d3js-ionic.svg?branch=master)](https://travis-ci.org/proustibat/d3js-ionic)
-[![Sonar quality gate](https://sonarcloud.io/api/badges/gate?key=prstbt.ionic.d3.app)](https://sonarcloud.io/dashboard?id=prstbt.ionic.d3.app)
-[![License](https://img.shields.io/github/license/proustibat/d3js-ionic.svg)](https://github.com/proustibat/d3js-ionic/blob/master/LICENSE.md)
+-------------------------
 
-[![Dependencies Status](https://david-dm.org/proustibat/d3js-ionic/status.svg)](https://david-dm.org/proustibat/d3js-ionic)
-[![Dev Dependencies Status](https://david-dm.org/proustibat/d3js-ionic/dev-status.svg)](https://david-dm.org/proustibat/d3js-ionic?type=dev)
+| [![d3js-ionic-icon](https://user-images.githubusercontent.com/1054387/35104149-46b23f56-fc68-11e7-8a50-357fa36d0d32.png)<br/> ![google-play-icon](https://user-images.githubusercontent.com/1054387/35104116-2c9addda-fc68-11e7-85fa-91b13423d5f4.png)](https://play.google.com/store/apps/details?id=prstbt.ionic.d3&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1)  | [![Build Status](https://travis-ci.org/proustibat/d3js-ionic.svg?branch=master)](https://travis-ci.org/proustibat/d3js-ionic) [![Sonar quality gate](https://sonarcloud.io/api/badges/gate?key=prstbt.ionic.d3.app)](https://sonarcloud.io/dashboard?id=prstbt.ionic.d3.app) [![Open issues](https://sonarcloud.io/api/badges/measure?key=prstbt.ionic.d3.app&metric=open_issues)](https://sonarcloud.io/component_measures?id=prstbt.ionic.d3.app&metric=open_issues) [![GitHub license](https://img.shields.io/github/license/proustibat/d3js-ionic.svg)](https://github.com/proustibat/d3js-ionic/blob/master/LICENSE.md) </br> [![Greenkeeper badge](https://badges.greenkeeper.io/proustibat/d3js-ionic.svg)](https://greenkeeper.io/) [![Dependencies Status](https://david-dm.org/proustibat/d3js-ionic/status.svg)](https://david-dm.org/proustibat/d3js-ionic) [![DevDependencies Status](https://david-dm.org/proustibat/d3js-ionic/dev-status.svg)](https://david-dm.org/proustibat/d3js-ionic?type=dev) | [![Maintenance](https://img.shields.io/maintenance/yes/2018.svg)](https://github.com/proustibat/d3js-ionic/commits/master) <br/> [![GitHub last commit](https://img.shields.io/github/last-commit/proustibat/d3js-ionic.svg)](https://github.com/proustibat/d3js-ionic/commits/master) |
+| --- | :---- | :---- 
 
-----------------
+---------------------------
 
-| [![d3js-ionic-icon](https://user-images.githubusercontent.com/1054387/35104149-46b23f56-fc68-11e7-8a50-357fa36d0d32.png)<br/> ![google-play-icon](https://user-images.githubusercontent.com/1054387/35104116-2c9addda-fc68-11e7-85fa-91b13423d5f4.png)](https://play.google.com/store/apps/details?id=prstbt.ionic.d3&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1) |
-| ------------- |
-| ![screenshot-1](https://user-images.githubusercontent.com/1054387/35104066-08acd856-fc68-11e7-821f-3ee8fbcf3b44.png) ![screenshot-2](https://user-images.githubusercontent.com/1054387/35104068-09de7626-fc68-11e7-9130-e0c22c07c980.png) |
 
----------------
+![screenshot-1](https://user-images.githubusercontent.com/1054387/35104066-08acd856-fc68-11e7-821f-3ee8fbcf3b44.png) ![screenshot-2](https://user-images.githubusercontent.com/1054387/35104068-09de7626-fc68-11e7-9130-e0c22c07c980.png)
+
+---------------------------
+
 
 ## Presentation
 
