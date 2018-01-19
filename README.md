@@ -6,7 +6,6 @@ A tutorial app built with [Ionic Framework](https://ionicframework.com/) to lear
 [![Sonar quality gate](https://sonarcloud.io/api/badges/gate?key=prstbt.ionic.d3.app)](https://sonarcloud.io/dashboard?id=prstbt.ionic.d3.app)
 [![License](https://img.shields.io/github/license/proustibat/d3js-ionic.svg)](https://github.com/proustibat/d3js-ionic/blob/master/LICENSE.md)
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/proustibat/d3js-ionic.svg)](https://greenkeeper.io/)
 [![Dependencies Status](https://david-dm.org/proustibat/d3js-ionic/status.svg)](https://david-dm.org/proustibat/d3js-ionic)
 [![Dev Dependencies Status](https://david-dm.org/proustibat/d3js-ionic/dev-status.svg)](https://david-dm.org/proustibat/d3js-ionic?type=dev)
 
