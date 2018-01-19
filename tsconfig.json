@@ -25,7 +25,7 @@
   },
   "typedocOptions": {
     "out": "documentation",
-    "theme": "default",
+    "theme": "minimal",
     "name": "D3.js Ionic",
     "hideGenerator": "true",
     "readme": "README.MD",
