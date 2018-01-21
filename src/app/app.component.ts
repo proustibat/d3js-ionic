@@ -1,13 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
-import { Platform, Nav, AlertController, MenuController } from 'ionic-angular';
+import { AlertController, MenuController, Nav, Platform } from 'ionic-angular';
 import { StatusBar }            from '@ionic-native/status-bar';
 import { SplashScreen }         from '@ionic-native/splash-screen';
 
-import { RootPage, PagesList, Menu } from "../pages/index";
-import { MenuOptionModel } from "../components/side-menu-content/models/menu-option-model";
-import { SideMenuSettings } from "../components/side-menu-content/models/side-menu-settings";
-import { HomePage } from "../pages/home/home";
-import { SideMenuContentComponent } from "../components/side-menu-content/side-menu-content.component";
+import { Menu, PagesList, RootPage } from '../pages/index';
+import { MenuOptionModel } from '../components/side-menu-content/models/menu-option-model';
+import { SideMenuSettings } from '../components/side-menu-content/models/side-menu-settings';
+import { HomePage } from '../pages/home/home';
+import { SideMenuContentComponent } from '../components/side-menu-content/side-menu-content.component';
 
 @Component({
     templateUrl: 'app.html'
@@ -15,7 +15,7 @@ import { SideMenuContentComponent } from "../components/side-menu-content/side-m
 
 export class MyApp {
 
-    rootPage:any = RootPage;
+    rootPage: any = RootPage;
 
     @ViewChild(Nav) nav: Nav;
 
@@ -63,8 +63,7 @@ export class MyApp {
                     message: 'You\'ve clicked a custom option!',
                     buttons: ['Ok']
                 }).present();
-            }
-            else {
+            } else {
                 // Redirect to the selected page
                 this.nav.setRoot(option.component || HomePage, { 'title': option.displayName });
             }

@@ -3,11 +3,11 @@ import { CommonHeaderComponent } from './common-header/common-header';
 import { FooterLinksComponent } from './footer-links/footer-links';
 import { ExpandableComponent } from './expandable/expandable';
 @NgModule({
-	declarations: [CommonHeaderComponent,
+    declarations: [CommonHeaderComponent,
     FooterLinksComponent,
     ExpandableComponent],
-	imports: [],
-	exports: [CommonHeaderComponent,
+    imports: [],
+    exports: [CommonHeaderComponent,
     FooterLinksComponent,
     ExpandableComponent]
 })

@@ -5,6 +5,7 @@
     "homepage": "https://medium.com/@proustibat",
     "private": true,
     "scripts": {
+        "tslint": "./node_modules/.bin/tslint -c tslint.json ./src/**/*.ts",
         "clean": "ionic-app-scripts clean",
         "build": "ionic-app-scripts build",
         "lint": "ionic-app-scripts lint",
