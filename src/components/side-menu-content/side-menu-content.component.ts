@@ -2,84 +2,35 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core'; // tslint:disable-line
 
 // Ionic
-import { Platform, Events } from 'ionic-angular';
+import { Events, Platform } from 'ionic-angular';
 
 // Models
 import { SideMenuSettings } from './models/side-menu-settings';
 import { MenuOptionModel } from './models/menu-option-model';
 import { SideMenuRedirectEvent, SideMenuRedirectEventData } from './models/side-menu-redirect-events';
-
-class InnerMenuOptionModel {
-
-    id: number;
-    iconName: string;
-    displayName: string;
-
-    targetOption: MenuOptionModel;
-
-    parent: InnerMenuOptionModel;
-
-    selected: boolean;
-
-    expanded: boolean;
-    subItemsCount: number;
-    subOptions: Array<InnerMenuOptionModel>;
-
-    private static counter = 1;
-    public static fromMenuOptionModel(option: MenuOptionModel, parent?: InnerMenuOptionModel): InnerMenuOptionModel {
-
-        let innerMenuOptionModel = new InnerMenuOptionModel();
-
-        innerMenuOptionModel.id = this.counter++;
-        innerMenuOptionModel.iconName = option.iconName;
-        innerMenuOptionModel.displayName = option.displayName;
-        innerMenuOptionModel.targetOption = option;
-        innerMenuOptionModel.parent = parent || null;
-
-        innerMenuOptionModel.selected = option.selected;
-
-        if (option.subItems) {
-            innerMenuOptionModel.expanded = false;
-            innerMenuOptionModel.subItemsCount = option.subItems.length;
-            innerMenuOptionModel.subOptions = [];
-
-            option.subItems.forEach(subItem => {
-
-                let innerSubItem = InnerMenuOptionModel.fromMenuOptionModel(subItem, innerMenuOptionModel);
-                innerMenuOptionModel.subOptions.push(innerSubItem);
-
-                // Select the parent if any
-                // child option is selected
-                if (subItem.selected) {
-                    innerSubItem.parent.selected = true;
-                    innerSubItem.parent.expanded = true;
-                }
-
-            });
-        }
-
-        return innerMenuOptionModel;
-    }
-}
+import { InnerMenuOptionModel } from './models/inner-menu-option-model';
 
 @Component({
     selector: 'side-menu-content',
     templateUrl: 'side-menu-content.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
+
 export class SideMenuContentComponent {
 
     // Main inputs
     public menuSettings: SideMenuSettings;
-    public menuOptions: Array<MenuOptionModel>;
+    public menuOptions: MenuOptionModel[];
+    public collapsableItems: InnerMenuOptionModel[] = [];
+
+    // Outputs: return the selected option to the caller
+    @Output() selectOption = new EventEmitter<any>();
 
     // Private properties
     private selectedOption: InnerMenuOptionModel;
 
-    public collapsableItems: Array<InnerMenuOptionModel> = [];
-
     @Input('options')
-    set options(value: Array<MenuOptionModel>) {
+    set options(value: MenuOptionModel[]) {
         if (value) {
             // Keep a reference to the options
             // sent to this component
@@ -87,18 +38,16 @@ export class SideMenuContentComponent {
             this.collapsableItems = new Array<InnerMenuOptionModel>();
 
             // Map the options to our internal models
-            this.menuOptions.forEach(option => {
+            this.menuOptions.forEach((option) => {
 
-
-
-                let innerMenuOption = InnerMenuOptionModel.fromMenuOptionModel(option);
+                const innerMenuOption = InnerMenuOptionModel.fromMenuOptionModel(option);
                 this.collapsableItems.push(innerMenuOption);
 
                 // Check if there's any option marked as selected
                 if (option.selected) {
                     this.selectedOption = innerMenuOption;
                 } else if (innerMenuOption.subItemsCount) {
-                    innerMenuOption.subOptions.forEach(subItem => {
+                    innerMenuOption.subOptions.forEach((subItem) => {
                         if (subItem.selected) {
                             this.selectedOption = subItem;
                         }
@@ -115,9 +64,6 @@ export class SideMenuContentComponent {
             this.mergeSettings();
         }
     }
-
-    // Outputs: return the selected option to the caller
-    @Output() selectOption = new EventEmitter<any>();
 
     constructor(private platform: Platform,
                 private eventsCtrl: Events,
@@ -150,12 +96,12 @@ export class SideMenuContentComponent {
     // Toggle the sub options of the selected item
     public toggleItemOptions(targetOption: InnerMenuOptionModel): void {
 
-        if(!targetOption) return;
+        if (!targetOption) return;
 
         // If the accordion mode is set to true, we need
         // to collapse all the other menu options
         if (this.menuSettings.accordionMode) {
-            this.collapsableItems.forEach(option => {
+            this.collapsableItems.forEach((option) => {
                 if (option.id !== targetOption.id) {
                     option.expanded = false;
                 }
@@ -168,13 +114,13 @@ export class SideMenuContentComponent {
 
     // Reset the entire menu
     public collapseAllOptions(): void {
-        this.collapsableItems.forEach(option => {
+        this.collapsableItems.forEach((option) => {
             if (!option.selected) {
                 option.expanded = false;
             }
 
             if (option.subItemsCount) {
-                option.subOptions.forEach(subItem => {
+                option.subOptions.forEach((subItem) => {
                     if (subItem.selected) {
                         // Expand the parent if any of
                         // its childs is selected
@@ -250,11 +196,11 @@ export class SideMenuContentComponent {
 
         let targetOption;
 
-        this.collapsableItems.forEach(option => {
+        this.collapsableItems.forEach((option) => {
             if (option.displayName.toLowerCase() === data.displayName.toLowerCase()) {
                 targetOption = option;
             } else if (option.subItemsCount) {
-                option.subOptions.forEach(subOption => {
+                option.subOptions.forEach((subOption) => {
                     if (subOption.displayName.toLowerCase() === data.displayName.toLowerCase()) {
                         targetOption = subOption;
                     }
@@ -285,7 +231,7 @@ export class SideMenuContentComponent {
                 md: '16px',
                 wp: '16px'
             }
-        }
+        };
 
         if (!this.menuSettings) {
             // Use the default values
@@ -293,29 +239,45 @@ export class SideMenuContentComponent {
             return;
         }
 
-        if (!this.menuSettings.itemHeight) {
-            this.menuSettings.itemHeight = defaultSettings.itemHeight;
+        const ms = this.menuSettings;
+        if (!ms.itemHeight) {
+            ms.itemHeight = defaultSettings.itemHeight;
         } else {
-            this.menuSettings.itemHeight.ios = this.isDefinedAndPositive(this.menuSettings.itemHeight.ios) ? this.menuSettings.itemHeight.ios : defaultSettings.itemHeight.ios;
-            this.menuSettings.itemHeight.md = this.isDefinedAndPositive(this.menuSettings.itemHeight.md) ? this.menuSettings.itemHeight.md : defaultSettings.itemHeight.md;
-            this.menuSettings.itemHeight.wp = this.isDefinedAndPositive(this.menuSettings.itemHeight.wp) ? this.menuSettings.itemHeight.wp : defaultSettings.itemHeight.wp;
+            const defIos = this.isDefinedAndPositive(ms.itemHeight.ios);
+            const defMd = this.isDefinedAndPositive(ms.itemHeight.md);
+            const defWp = this.isDefinedAndPositive(ms.itemHeight.wp);
+            const heightIos = defIos ? ms.itemHeight.ios : defaultSettings.itemHeight.ios;
+            const heightMd = defMd ? ms.itemHeight.md : defaultSettings.itemHeight.md;
+            const heightWp = defWp ? ms.itemHeight.wp : defaultSettings.itemHeight.wp;
+            ms.itemHeight.ios = heightIos;
+            ms.itemHeight.md = heightMd;
+            ms.itemHeight.wp = heightWp;
         }
+        const shSeOpt = 'showSelectedOption';
+        ms[shSeOpt] =  this.isDefined(ms[shSeOpt]) ? ms[shSeOpt] : defaultSettings[shSeOpt];
 
-        this.menuSettings.showSelectedOption = this.isDefined(this.menuSettings.showSelectedOption) ? this.menuSettings.showSelectedOption : defaultSettings.showSelectedOption;
-        this.menuSettings.accordionMode = this.isDefined(this.menuSettings.accordionMode) ? this.menuSettings.accordionMode : defaultSettings.accordionMode;
-        this.menuSettings.arrowIcon = this.isDefined(this.menuSettings.arrowIcon) ? this.menuSettings.arrowIcon : defaultSettings.arrowIcon;
-        this.menuSettings.selectedOptionClass = this.isDefined(this.menuSettings.selectedOptionClass) ? this.menuSettings.selectedOptionClass : defaultSettings.selectedOptionClass;
-        this.menuSettings.subOptionIndentation = this.isDefined(this.menuSettings.subOptionIndentation) ? this.menuSettings.subOptionIndentation : defaultSettings.subOptionIndentation;
+        const accModOpt = 'accordionMode';
+        ms[accModOpt] = this.isDefined(ms[accModOpt]) ? ms[accModOpt] : defaultSettings[accModOpt];
 
-        this.menuSettings.indentSubOptionsWithoutIcons = this.isDefined(this.menuSettings.indentSubOptionsWithoutIcons) ? this.menuSettings.indentSubOptionsWithoutIcons : defaultSettings.indentSubOptionsWithoutIcons;
+        const arrIco = 'arrowIcon';
+        ms[arrIco] = this.isDefined(ms[arrIco]) ? ms[arrIco] : defaultSettings[arrIco];
 
+        const selOptClass = 'selectedOptionClass';
+        ms[selOptClass] = this.isDefined(ms[selOptClass]) ? ms[selOptClass] : defaultSettings[selOptClass];
 
-        if (!this.menuSettings.subOptionIndentation) {
-            this.menuSettings.subOptionIndentation = defaultSettings.subOptionIndentation;
+        const suOptInd = 'subOptionIndentation';
+        ms[suOptInd] = this.isDefined(ms[suOptInd]) ? ms[suOptInd] : defaultSettings[suOptInd];
+
+        const indSuOptWIco = 'indentSubOptionsWithoutIcons';
+        ms[indSuOptWIco] = this.isDefined(ms[indSuOptWIco]) ? ms[indSuOptWIco] : defaultSettings[indSuOptWIco];
+
+        if (!ms[suOptInd]) {
+            ms[suOptInd] = defaultSettings[suOptInd];
         } else {
-            this.menuSettings.subOptionIndentation.ios = this.isDefined(this.menuSettings.subOptionIndentation.ios) ? this.menuSettings.subOptionIndentation.ios : defaultSettings.subOptionIndentation.ios;
-            this.menuSettings.subOptionIndentation.md = this.isDefined(this.menuSettings.subOptionIndentation.md) ? this.menuSettings.subOptionIndentation.md : defaultSettings.subOptionIndentation.md;
-            this.menuSettings.subOptionIndentation.wp = this.isDefined(this.menuSettings.subOptionIndentation.wp) ? this.menuSettings.subOptionIndentation.wp : defaultSettings.subOptionIndentation.wp;
+            const suOpInd = 'subOptionIndentation';
+            ms[suOpInd].ios = this.isDefined(ms[suOpInd].ios) ? ms[suOpInd].ios : defaultSettings[suOpInd].ios;
+            ms[suOpInd].md = this.isDefined(ms[suOpInd].md) ? ms[suOpInd].md : defaultSettings[suOpInd].md;
+            ms[suOpInd].wp = this.isDefined(ms[suOpInd].wp) ? ms[suOpInd].wp : defaultSettings[suOpInd].wp;
         }
     }
 

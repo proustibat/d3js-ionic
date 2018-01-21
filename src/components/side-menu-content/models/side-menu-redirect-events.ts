@@ -1,7 +1,7 @@
 // SideMenuRedirectEvent constant
-export const SideMenuRedirectEvent: string = 'sidemenu:redirect';
+export const SideMenuRedirectEvent = 'sidemenu:redirect';
 
 // SideMenuRedirectEventData interface
 export interface SideMenuRedirectEventData {
-	displayName?: string;
+    displayName?: string;
 }

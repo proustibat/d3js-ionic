@@ -4,10 +4,4 @@ import { Component } from '@angular/core';
     selector: 'page-group-element',
     templateUrl: 'group-element.html',
 })
-export class GroupElementPage {
-
-
-    constructor() {}
-
-    ionViewDidLoad() {}
-}
+export class GroupElementPage {}

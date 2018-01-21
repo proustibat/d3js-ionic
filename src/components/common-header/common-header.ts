@@ -8,15 +8,15 @@ export class CommonHeaderComponent {
 
     @ViewChild('ref') refIonTitle;
 
-    defaultTitle:string = "D3.js with Ionic";
+    defaultTitle = 'D3.js with Ionic';
 
-    constructor(private renderer:Renderer2) {
+    constructor(private renderer: Renderer2) {
 
     }
 
     ngAfterViewInit() {
-        let titleEl = this.refIonTitle.getElementRef().nativeElement.querySelector('.toolbar-title');
-        if( titleEl.childNodes.length === 0 ) {
+        const titleEl = this.refIonTitle.getElementRef().nativeElement.querySelector('.toolbar-title');
+        if (titleEl.childNodes.length === 0) {
             this.renderer.appendChild(titleEl, this.renderer.createText(this.defaultTitle));
         }
 

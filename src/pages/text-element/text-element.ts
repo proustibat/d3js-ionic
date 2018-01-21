@@ -18,42 +18,42 @@ export class TextElementPage {
     createSVG(): void {
 
         // Data Set
-        let circleData = [
-            { 'cx': 20, 'cy': 20, 'radius': 20, 'color' : 'green' },
-            { 'cx': 70, 'cy': 70, 'radius': 20, 'color' : 'purple' }];
+        const circleData = [
+            { cx: 20, cy: 20, radius: 20, color : 'green' },
+            { cx: 70, cy: 70, radius: 20, color : 'purple' }];
 
         // SVG Viewport
-        let svgContainer = d3.select( '#svg-text' ).append( 'svg' )
-            .attr( 'width',200 )
-            .attr( 'height',200 );
+        const svgContainer = d3.select('#svg-text').append('svg')
+            .attr('width', 200)
+            .attr('height', 200);
 
         // Add circles to the svgContainer
-        let circles = svgContainer.selectAll( 'circle' )
-            .data( circleData )
+        const circles = svgContainer.selectAll('circle')
+            .data(circleData)
             .enter()
-            .append( 'circle' );
+            .append('circle');
 
         // Add the circle attributes
         circles
-            .attr( 'cx', d => d.cx )
-            .attr( 'cy', d => d.cy )
-            .attr( 'r', d => d.radius )
-            .style( 'fill', d => d.color );
+            .attr('cx', (d) => d.cx)
+            .attr('cy', (d) => d.cy)
+            .attr('r', (d) => d.radius)
+            .style('fill', (d) => d.color);
 
         // Add the SVG Text Element to the svgContainer
-        let text = svgContainer.selectAll( 'text' )
-            .data( circleData )
+        const text = svgContainer.selectAll('text')
+            .data(circleData)
             .enter()
-            .append( 'text' );
+            .append('text');
 
         // Add the text attributes
         text
-            .attr( 'x',  d => d.cx )
-            .attr( 'y',  d => d.cy )
-            .text( d => '( ' + d.cx + ', ' + d.cy +' )' )
-            .attr( 'font-family', 'sans-serif' )
-            .attr( 'font-size', '20px' )
-            .attr( 'fill', 'red' );
+            .attr('x',  (d) => d.cx)
+            .attr('y',  (d) => d.cy)
+            .text((d) => '( ' + d.cx + ', ' + d.cy + ' )')
+            .attr('font-family', 'sans-serif')
+            .attr('font-size', '20px')
+            .attr('fill', 'red');
 
     }
 

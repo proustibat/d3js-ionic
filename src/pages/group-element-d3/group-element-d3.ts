@@ -7,65 +7,61 @@ import * as d3 from 'd3-selection';
 })
 export class GroupElementD3Page {
 
-    constructor(private elementRef:ElementRef) {}
+    constructor(private elementRef: ElementRef) {}
 
     ionViewDidLoad() {
-        this.elementRef.nativeElement.querySelectorAll('.svg-element').forEach( container => {
+        this.elementRef.nativeElement.querySelectorAll('.svg-element').forEach((container) => {
             this.createSVG('#' + container.id, JSON.parse(container.getAttribute('data-transformations')));
         });
     }
 
+    createSVG(wrapperId: string, transformations?: [{group: string, properties: string[]}]): void {
+        const circleData = [
+            { cx: 20, cy: 20, radius: 20, color : 'green' },
+            { cx: 70, cy: 70, radius: 20, color : 'purple' }];
 
-    createSVG( wrapperId:string, transformations?:[{group:string, properties:Array<string>}] ): void {
-        let circleData = [
-            { 'cx': 20, 'cy': 20, 'radius': 20, 'color' : 'green' },
-            { 'cx': 70, 'cy': 70, 'radius': 20, 'color' : 'purple' }];
+        const rectangleData = [
+            { rx: 110, ry: 110, height: 30, width: 30, color : 'blue' },
+            { rx: 160, ry: 160, height: 30, width: 30, color : 'red' }];
 
-        let rectangleData = [
-            { 'rx': 110, 'ry': 110, 'height': 30, 'width': 30, 'color' : 'blue' },
-            { 'rx': 160, 'ry': 160, 'height': 30, 'width': 30, 'color' : 'red' }];
-
-        let svgContainer = d3.select( wrapperId ).append( 'svg' )
-            .attr( 'width',200 )
-            .attr( 'height',200 );
-
+        const svgContainer = d3.select(wrapperId).append('svg')
+            .attr('width', 200)
+            .attr('height', 200);
 
         // Appending an SVG Group Element to the already defined SVG Container
-        let circleGroup = svgContainer.append( 'g' );
-        let rectangleGroup = svgContainer.append( 'g' );
+        const circleGroup = svgContainer.append('g');
+        const rectangleGroup = svgContainer.append('g');
 
         // Add circles to the group container
-        let circles = circleGroup.selectAll( 'circle' )
-            .data( circleData )
+        const circles = circleGroup.selectAll('circle')
+            .data(circleData)
             .enter()
-            .append( 'circle' );
+            .append('circle');
 
         circles
-            .attr( 'cx', d => d.cx )
-            .attr( 'cy', d => d.cy )
-            .attr( 'r', d => d.radius )
-            .style( 'fill', d => d.color );
-
+            .attr('cx', (d) => d.cx)
+            .attr('cy', (d) => d.cy)
+            .attr('r', (d) => d.radius)
+            .style('fill', (d) => d.color);
 
         // Add rectangles to the group container
-        let rectangles = rectangleGroup.selectAll( 'rect' )
-            .data( rectangleData )
+        const rectangles = rectangleGroup.selectAll('rect')
+            .data(rectangleData)
             .enter()
-            .append( 'rect' );
+            .append('rect');
 
         rectangles
-            .attr( 'x', d => d.rx )
-            .attr( 'y', d => d.ry )
-            .attr( 'height', d => d.height )
-            .attr( 'width', d => d.width )
-            .style( 'fill', d => d.color );
-
+            .attr('x', (d) => d.rx)
+            .attr('y', (d) => d.ry)
+            .attr('height', (d) => d.height)
+            .attr('width', (d) => d.width)
+            .style('fill', (d) => d.color);
 
         // Transform the groups
-        if( transformations ) {
-            transformations.forEach( transformation => {
+        if (transformations) {
+            transformations.forEach((transformation) => {
                 let group = null;
-                switch ( transformation.group ) {
+                switch (transformation.group) {
                     case 'circles':
                         group = circleGroup;
                         break;
@@ -73,9 +69,9 @@ export class GroupElementD3Page {
                         group = rectangleGroup;
                         break;
                 }
-                if( group ) {
-                    transformation.properties.forEach( property => {
-                        group.attr( 'transform', property );
+                if (group) {
+                    transformation.properties.forEach((property) => {
+                        group.attr('transform', property);
                     });
                 }
             });
