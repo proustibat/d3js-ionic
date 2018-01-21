@@ -1,0 +1,54 @@
+languages:
+  JavaScript: true
+  Ruby: true
+  Python: false
+  PHP: false
+
+exclude_patterns:
+- config/**/*
+- node_modules/**/*
+- webpack.*.js
+- karma.conf.js
+- platforms/
+- plugins/
+
+plugins:
+  tslint:
+    enabled: true
+    config: tslint.json
+  fixme:
+    enabled: true
+  stylelint:
+      enabled: true
+  csslint:
+    enabled: true
+    checks:
+      bulletproof-font-face:
+        enabled: false
+      universal-selector:
+        enabled: false
+  duplication:
+    enabled: true
+
+version: "2"
+checks:
+  argument-count:
+    enabled: true
+  complex-logic:
+    enabled: true
+  file-lines:
+    enabled: true
+  method-complexity:
+    enabled: true
+  method-count:
+    enabled: true
+  method-lines:
+    enabled: true
+  nested-control-flow:
+    enabled: true
+  return-statements:
+    enabled: true
+  similar-code:
+    enabled: true
+  identical-code:
+    enabled: true
