@@ -1,15 +1,15 @@
-import { HomePage }             from '../pages/home/home';
-import { InstallationPage }     from './installation/installation';
-import { BasicElementsPage }    from '../pages/basic-elements/basic-elements';
-import { BasicShapesPage }      from '../pages/basic-shapes/basic-shapes';
-import { PathsSvgPage }         from '../pages/paths-svg/paths-svg';
-import { DynamicSvgCoordPage }  from '../pages/dynamic-svg-coord/dynamic-svg-coord';
-import { ScalesPage }           from '../pages/scales/scales';
-import { GroupElementPage }     from './group-element/group-element';
-import { GroupElementD3Page }   from './group-element-d3/group-element-d3';
-import { TextElementPage }      from './text-element/text-element';
-import { AxesPage }             from './axes/axes';
-import { MenuOptionModel }      from '../components/side-menu-content/models/menu-option-model';
+import { HomePage } from '../pages/home/home';
+import { InstallationPage } from './installation/installation';
+import { BasicElementsPage } from '../pages/basic-elements/basic-elements';
+import { BasicShapesPage } from '../pages/basic-shapes/basic-shapes';
+import { PathsSvgPage } from '../pages/paths-svg/paths-svg';
+import { DynamicSvgCoordPage } from '../pages/dynamic-svg-coord/dynamic-svg-coord';
+import { ScalesPage } from '../pages/scales/scales';
+import { GroupElementPage } from './group-element/group-element';
+import { GroupElementD3Page } from './group-element-d3/group-element-d3';
+import { TextElementPage } from './text-element/text-element';
+import { AxesPage } from './axes/axes';
+import { MenuOptionModel } from '../components/side-menu-content/models/menu-option-model';
 
 export const PagesList = [
     { component: HomePage,              title: 'Home' },
@@ -25,7 +25,7 @@ export const PagesList = [
     { component: AxesPage,              title: 'D3.js Axes' },
 ];
 
-export const Menu: Array<MenuOptionModel> = [
+export const Menu: MenuOptionModel[] = [
     {
         displayName: 'Home',
         iconName: 'home',
@@ -67,7 +67,7 @@ export const Menu: Array<MenuOptionModel> = [
     }
 ];
 
-export const Pages = PagesList.map(page => {
+export const Pages = PagesList.map((page) => {
     return page.component;
 });
 

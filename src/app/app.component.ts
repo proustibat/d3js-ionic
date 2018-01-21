@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { AlertController, MenuController, Nav, Platform } from 'ionic-angular';
-import { StatusBar }            from '@ionic-native/status-bar';
-import { SplashScreen }         from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { Menu, PagesList, RootPage } from '../pages/index';
 import { MenuOptionModel } from '../components/side-menu-content/models/menu-option-model';
@@ -20,14 +20,14 @@ export class MyApp {
     @ViewChild(Nav) nav: Nav;
 
     // Get the instance to call the public methods
-    @ViewChild( SideMenuContentComponent ) sideMenu: SideMenuContentComponent;
+    @ViewChild(SideMenuContentComponent) sideMenu: SideMenuContentComponent;
 
     pages = PagesList;
 
     menuData = Menu;
 
     // Options to show in the SideMenuComponent
-    public options: Array<MenuOptionModel> = Menu;
+    public options: MenuOptionModel[] = Menu;
 
     // Settings for the SideMenuComponent
     public sideMenuSettings: SideMenuSettings = {
@@ -47,7 +47,7 @@ export class MyApp {
 
     constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,
                 private alertCtrl: AlertController,
-                private menuCtrl: MenuController ) {
+                private menuCtrl: MenuController) {
         platform.ready().then(() => {
             statusBar.styleDefault();
             splashScreen.hide();
@@ -57,7 +57,7 @@ export class MyApp {
     public selectOption(option: MenuOptionModel): void {
         this.menuCtrl.close().then(() => {
 
-            if ( option.custom ) {
+            if (option.custom) {
                 this.alertCtrl.create({
                     title: 'Information',
                     message: 'You\'ve clicked a custom option!',
@@ -65,20 +65,8 @@ export class MyApp {
                 }).present();
             } else {
                 // Redirect to the selected page
-                this.nav.setRoot(option.component || HomePage, { 'title': option.displayName });
+                this.nav.setRoot(option.component || HomePage, { title: option.displayName });
             }
         });
     }
-
-    // public collapseMenuOptions(): void {
-    //     this.sideMenu.collapseAllOptions();
-    // }
-
-    // openPage(page) {
-    //     // page.component !== this.nav.getActive().component ? this.nav.push(page.component) : console.log('already here');
-    //     page.component !== this.nav.getActive().component ? this.nav.setRoot(page.component) : console.log('already here');
-    // }
-
 }
-
-
