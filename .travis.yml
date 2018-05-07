@@ -8,7 +8,9 @@ env:
 
 
 language: node_js
-node_js: '8'
+node_js:
+- '8'
+- '10'
 cache: npm
 
 # create a user token here: https://sonarcloud.io/account/security
