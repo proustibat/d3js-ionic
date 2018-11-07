@@ -31,7 +31,7 @@
         "cordova-android": "^7.0.0",
         "cordova-ios": "^4.5.4",
         "cordova-plugin-device": "^2.0.1",
-        "cordova-plugin-ionic-webview": "^1.1.16",
+        "cordova-plugin-ionic-webview": "^2.2.1",
         "cordova-plugin-splashscreen": "^5.0.1",
         "cordova-plugin-whitelist": "^1.3.3",
         "d3": "^4.12.2",
