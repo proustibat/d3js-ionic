@@ -51,7 +51,7 @@
     "devDependencies": {
         "@ionic/app-scripts": "^3.1.7",
         "@types/d3": "^4.12.0",
-        "tslint-ionic-rules": "0.0.13",
+        "tslint-ionic-rules": "0.0.20",
         "typedoc": "^0.10.0",
         "typescript": "^2.6.2"
     },
